@@ -37,14 +37,14 @@
       <link>http://localhost:1313/resume/</link>
       <pubDate>Sat, 03 May 2025 23:56:34 +0330</pubDate>
       <guid>http://localhost:1313/resume/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;Prefer a PDF version? &lt;a href=&#34;https://github.com/shayansm2/shayansm2.github.io/releases/download/resume/resume_shayanShafieeMoghadam.pdf&#34;&gt;Download my resume&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+      <description>&lt;!-- **Prefer a PDF version? [Download my resume](https://github.com/shayansm2/shayansm2.github.io/releases/download/resume/resume_shayanShafieeMoghadam.pdf)** --&gt;
 &lt;h1 id=&#34;work-experience&#34;&gt;WORK EXPERIENCE&lt;/h1&gt;
 &lt;div class=&#34;custom-html&#34; style=&#34;display: flex; align-items: center; justify-content: space-between; padding: 10px 0; font-family: Arial, sans-serif;&#34;&gt;
   &lt;div style=&#34;display: flex; align-items: center; gap: 15px;&#34;&gt;
     &lt;img src=&#34;https://media.licdn.com/dms/image/v2/C4D0BAQFIOmQcwTXY5g/company-logo_100_100/company-logo_100_100/0/1630513308234/hamravesh_logo?e=1752710400&amp;v=beta&amp;t=TITd5IY69lWY8N6JUJToOIlKRcIlTRVMNJ6znd1pQV4&#34; alt=&#34;Company Logo&#34; 
          style=&#34;width: 40px; height: 40px; object-fit: contain;&#34; /&gt;
     &lt;div style=&#34;display: flex; flex-direction: column;&#34;&gt;
-      &lt;div style=&#34;font-weight: bold; font-size: 1.1em;&#34;&gt;Software Engineer&lt;/div&gt;
+      &lt;div style=&#34;font-weight: bold; font-size: 1.1em;&#34;&gt;Senior Software Engineer&lt;/div&gt;
       &lt;div&gt;
         &lt;a href=&#34;https://hamravesh.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34; 
          style=&#34;text-decoration: none; font-size: 0.9em;&#34;&gt;Hamravesh Cloud&lt;/a&gt;
@@ -57,31 +57,31 @@
   &lt;/div&gt;
 &lt;/div&gt;
 &lt;ul&gt;
+&lt;li&gt;Contributed to the Backup Service at Hamravesh Cloud (leading PaaS provider in Iran)–a critical microservice managing automated, cross-cluster backups across distributed Kubernetes environments.&lt;/li&gt;
 &lt;li&gt;Developed the core billing and pricing system for backup service, generating monthly revenue of +300 million tomans.&lt;/li&gt;
-&lt;li&gt;Redesigned and migrated backup service pages using Django (API) and React (frontend), and led the transition from a monolith to microservices—including deployment and database migration—enabling development team autonomy.&lt;/li&gt;
+&lt;li&gt;Redesigned and migrated backup service pages using Django (API) and React (frontend), and led the transition from a monolith to microservices—including deployment, CI/CD, and database migration—enabling development team autonomy.&lt;/li&gt;
 &lt;li&gt;Analyzed and identified recurring operational tasks in the backup system, designed and implemented two automated workflows using Temporal—for snapshot migration and backup garbage collection—resulting in a ~40% reduction in operational workload and ~20% increase in backup storage capacity without added infrastructure costs.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class=&#34;custom-html&#34; style=&#34;display: flex; align-items: center; justify-content: space-between; padding: 10px 0; font-family: Arial, sans-serif;&#34;&gt;
+&lt;!-- &lt;div class=&#34;custom-html&#34; style=&#34;display: flex; align-items: center; justify-content: space-between; padding: 10px 0; font-family: Arial, sans-serif;&#34;&gt;
   &lt;div style=&#34;display: flex; align-items: center; gap: 15px;&#34;&gt;
-    &lt;img src=&#34;https://media.licdn.com/dms/image/v2/D4D0BAQG7Yx-JnkeKww/company-logo_100_100/company-logo_100_100/0/1715671804727/venue_wise_logo?e=1752710400&amp;v=beta&amp;t=0e1FGuezZo6uUGC7MwGT4IzUGcEBCY1dojGDyDfew1E&#34; alt=&#34;Company Logo&#34; 
+    &lt;img src=&#34;https://media.licdn.com/dms/image/v2/D4D0BAQG7Yx-JnkeKww/company-logo_100_100/company-logo_100_100/0/1715671804727/venue_wise_logo?e=1752710400&amp;v=beta&amp;t=0e1FGuezZo6uUGC7MwGT4IzUGcEBCY1dojGDyDfew1E&#34; alt=&#34;Company Logo&#34;
          style=&#34;width: 40px; height: 40px; object-fit: contain;&#34; /&gt;
     &lt;div style=&#34;display: flex; flex-direction: column;&#34;&gt;
       &lt;div style=&#34;font-weight: bold; font-size: 1.1em;&#34;&gt;Software Engineer&lt;/div&gt;
       &lt;div&gt;
-        &lt;a href=&#34;https://venuewise.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34; 
+        &lt;a href=&#34;https://venuewise.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;
          style=&#34;text-decoration: none; font-size: 0.9em;&#34;&gt;Venue Wise&lt;/a&gt;
       &lt;/div&gt;
     &lt;/div&gt;
+
   &lt;/div&gt;
   &lt;div style=&#34;text-align: right; white-space: nowrap; font-size: 0.9em;&#34;&gt;
       May 2024 - Jul 2024 (3 mos)
       &lt;div style=&#34;font-size: 0.85em;&#34;&gt;Dubai, United Arab Emirates (Remote) . Contract&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;
-&lt;ul&gt;
-&lt;li&gt;Integrated the existing system with Zoho CRM, streamlining customer relationship follow-ups and reducing manual data entry, improving sales team efficiency.&lt;/li&gt;
-&lt;li&gt;Implemented event-driven architecture in the Laravel-based project, reducing average request processing time and decoupling business logic, which accelerated feature development.&lt;/li&gt;
-&lt;/ul&gt;
+&lt;/div&gt; --&gt;
+&lt;!-- - Integrated the existing system with Zoho CRM, streamlining customer relationship follow-ups and reducing manual data entry, improving sales team efficiency.
+- Implemented event-driven architecture in the Laravel-based project, reducing average request processing time and decoupling business logic, which accelerated feature development. --&gt;
 &lt;div class=&#34;custom-html&#34; style=&#34;display: flex; align-items: center; justify-content: space-between; padding: 10px 0; font-family: Arial, sans-serif;&#34;&gt;
   &lt;div style=&#34;display: flex; align-items: center; gap: 15px;&#34;&gt;
     &lt;img src=&#34;https://media.licdn.com/dms/image/v2/C4D0BAQGshHg22ds-ug/company-logo_100_100/company-logo_100_100/0/1652508506193/digikala_logo?e=1752710400&amp;v=beta&amp;t=E5-4IITE8O_B8whLN0NlZ5R9RJcs5h8ck4SpJWRE9-M&#34; alt=&#34;Company Logo&#34; 
@@ -90,7 +90,7 @@
       &lt;div style=&#34;font-weight: bold; font-size: 1.1em;&#34;&gt;Senior Software Engineer&lt;/div&gt;
       &lt;div&gt;
         &lt;a href=&#34;https://www.digikala.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34; 
-         style=&#34;text-decoration: none; font-size: 0.9em;&#34;&gt;Digikala&lt;/a&gt;
+         style=&#34;text-decoration: none; font-size: 0.9em;&#34;&gt;Digikala E-commerce&lt;/a&gt;
       &lt;/div&gt;
     &lt;/div&gt;
   &lt;/div&gt;
@@ -113,7 +113,7 @@
       &lt;div style=&#34;font-weight: bold; font-size: 1.1em;&#34;&gt;Software Engineer&lt;/div&gt;
       &lt;div&gt;
         &lt;a href=&#34;https://www.digikala.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34; 
-         style=&#34;text-decoration: none; font-size: 0.9em;&#34;&gt;Digikala&lt;/a&gt;
+         style=&#34;text-decoration: none; font-size: 0.9em;&#34;&gt;Digikala E-commerce&lt;/a&gt;
       &lt;/div&gt;
     &lt;/div&gt;
   &lt;/div&gt;
@@ -127,27 +127,26 @@
 &lt;li&gt;Developed a PHP Snowplow SDK to track user activities and transmit events to the big data team, improving data accuracy and providing actionable insights for big data and marketing teams to drive decision-making.&lt;/li&gt;
 &lt;li&gt;Built and deployed a new cashback system for Prime users, enhancing user loyalty and driving a 30% increase in repeat purchases among Prime members.&lt;/li&gt;
 &lt;li&gt;Developed a Python framework for generating reports and analytics from Jira data, leveraging Python data pipelines, PostgreSQL, and DBT. This automation streamlined Scrum Master tasks, reducing the team’s dependency on one full-time Scrum Master and improving operational efficiency.&lt;/li&gt;
+&lt;li&gt;Led a 6-person team, as a Bootcamp Instructor, through intensive software engineering instruction over 2 months, provided technical guidance and project oversight, resulting in hiring 4 bootcamp graduates.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class=&#34;custom-html&#34; style=&#34;display: flex; align-items: center; justify-content: space-between; padding: 10px 0; font-family: Arial, sans-serif;&#34;&gt;
+&lt;!-- &lt;div class=&#34;custom-html&#34; style=&#34;display: flex; align-items: center; justify-content: space-between; padding: 10px 0; font-family: Arial, sans-serif;&#34;&gt;
   &lt;div style=&#34;display: flex; align-items: center; gap: 15px;&#34;&gt;
-    &lt;img src=&#34;https://media.licdn.com/dms/image/v2/C4D0BAQGshHg22ds-ug/company-logo_100_100/company-logo_100_100/0/1652508506193/digikala_logo?e=1752710400&amp;v=beta&amp;t=E5-4IITE8O_B8whLN0NlZ5R9RJcs5h8ck4SpJWRE9-M&#34; alt=&#34;Company Logo&#34; 
+    &lt;img src=&#34;https://media.licdn.com/dms/image/v2/C4D0BAQGshHg22ds-ug/company-logo_100_100/company-logo_100_100/0/1652508506193/digikala_logo?e=1752710400&amp;v=beta&amp;t=E5-4IITE8O_B8whLN0NlZ5R9RJcs5h8ck4SpJWRE9-M&#34; alt=&#34;Company Logo&#34;
          style=&#34;width: 40px; height: 40px; object-fit: contain;&#34; /&gt;
     &lt;div style=&#34;display: flex; flex-direction: column;&#34;&gt;
       &lt;div style=&#34;font-weight: bold; font-size: 1.1em;&#34;&gt;Bootcamp Instructor&lt;/div&gt;
       &lt;div&gt;
-        &lt;a href=&#34;https://www.digikala.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34; 
-         style=&#34;text-decoration: none; font-size: 0.9em;&#34;&gt;Digikala&lt;/a&gt;
+        &lt;a href=&#34;https://www.digikala.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;
+         style=&#34;text-decoration: none; font-size: 0.9em;&#34;&gt;Digikala E-commerce&lt;/a&gt;
       &lt;/div&gt;
     &lt;/div&gt;
+
   &lt;/div&gt;
   &lt;div style=&#34;text-align: right; white-space: nowrap; font-size: 0.9em;&#34;&gt;
       Jul 2022 - Sep 2022 (3 mos)
       &lt;div style=&#34;font-size: 0.85em;&#34;&gt;Tehran - Iran . Part-time&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;
-&lt;ul&gt;
-&lt;li&gt;Led a 6-person team through intensive software engineering instruction over 2 months, provided technical guidance and project oversight, resulting in hiring 4 bootcamp graduates.&lt;/li&gt;
-&lt;/ul&gt;
+&lt;/div&gt; --&gt;
 &lt;div class=&#34;custom-html&#34; style=&#34;display: flex; align-items: center; justify-content: space-between; padding: 10px 0; font-family: Arial, sans-serif;&#34;&gt;
   &lt;div style=&#34;display: flex; align-items: center; gap: 15px;&#34;&gt;
     &lt;img src=&#34;https://media.licdn.com/dms/image/v2/C4D0BAQGshHg22ds-ug/company-logo_100_100/company-logo_100_100/0/1652508506193/digikala_logo?e=1752710400&amp;v=beta&amp;t=E5-4IITE8O_B8whLN0NlZ5R9RJcs5h8ck4SpJWRE9-M&#34; alt=&#34;Company Logo&#34; 
@@ -156,7 +155,7 @@
       &lt;div style=&#34;font-weight: bold; font-size: 1.1em;&#34;&gt;Data Analyst&lt;/div&gt;
       &lt;div&gt;
         &lt;a href=&#34;https://www.digikala.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34; 
-         style=&#34;text-decoration: none; font-size: 0.9em;&#34;&gt;Digikala&lt;/a&gt;
+         style=&#34;text-decoration: none; font-size: 0.9em;&#34;&gt;Digikala E-commerce&lt;/a&gt;
       &lt;/div&gt;
     &lt;/div&gt;
   &lt;/div&gt;
@@ -169,27 +168,28 @@
 &lt;li&gt;Proposed a Profit Contribution (PC2) calculation model aimed at providing insights for optimizing operational costs and boosting revenue.&lt;/li&gt;
 &lt;li&gt;Developed a discount optimization model and its accompanying data pipeline utilizing Python, PowerBI, and SQL Server, resulting in providing enhanced recommendations to the business for setting optimal discounts, thereby increasing revenue.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class=&#34;custom-html&#34; style=&#34;display: flex; align-items: center; justify-content: space-between; padding: 10px 0; font-family: Arial, sans-serif;&#34;&gt;
+&lt;!-- &lt;div class=&#34;custom-html&#34; style=&#34;display: flex; align-items: center; justify-content: space-between; padding: 10px 0; font-family: Arial, sans-serif;&#34;&gt;
   &lt;div style=&#34;display: flex; align-items: center; gap: 15px;&#34;&gt;
-    &lt;img src=&#34;https://media.licdn.com/dms/image/v2/C560BAQFaRNyDG5O8Cg/company-logo_100_100/company-logo_100_100/0/1630625333751/bluebitsoft_logo?e=1752710400&amp;v=beta&amp;t=q2sva6ksAVz0mMULXkfSmr4TUYRX9sLIUEjzoxfWh5Y&#34; alt=&#34;Company Logo&#34; 
+    &lt;img src=&#34;https://media.licdn.com/dms/image/v2/C560BAQFaRNyDG5O8Cg/company-logo_100_100/company-logo_100_100/0/1630625333751/bluebitsoft_logo?e=1752710400&amp;v=beta&amp;t=q2sva6ksAVz0mMULXkfSmr4TUYRX9sLIUEjzoxfWh5Y&#34; alt=&#34;Company Logo&#34;
          style=&#34;width: 40px; height: 40px; object-fit: contain;&#34; /&gt;
     &lt;div style=&#34;display: flex; flex-direction: column;&#34;&gt;
       &lt;div style=&#34;font-weight: bold; font-size: 1.1em;&#34;&gt;Business Intelligence Analyst&lt;/div&gt;
       &lt;div&gt;
-        &lt;a href=&#34;https://bluebitsoft.codes/&#34; target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34; 
+        &lt;a href=&#34;https://bluebitsoft.codes/&#34; target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;
          style=&#34;text-decoration: none; font-size: 0.9em;&#34;&gt;BlueBitSoft&lt;/a&gt;
       &lt;/div&gt;
     &lt;/div&gt;
+
   &lt;/div&gt;
   &lt;div style=&#34;text-align: right; white-space: nowrap; font-size: 0.9em;&#34;&gt;
       Jun 2020 - Sep 2020 (4 mos)
       &lt;div style=&#34;font-size: 0.85em;&#34;&gt;Netherlands (Remote) . Part-time&lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;
-&lt;h3&gt;&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;Developed and enhanced visualization dashboards in PowerBI to deliver actionable managerial insights.&lt;/li&gt;
-&lt;/ul&gt;
+
+###
+
+- Developed and enhanced visualization dashboards in PowerBI to deliver actionable managerial insights. --&gt;
 &lt;hr&gt;
 &lt;h1 id=&#34;education&#34;&gt;EDUCATION&lt;/h1&gt;
 &lt;div style=&#34;display: flex; align-items: center; gap: 15px;&#34;&gt;

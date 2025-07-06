@@ -3,7 +3,7 @@ date = '2025-05-03T23:56:34+03:30'
 title = 'Resume'
 +++
 
-**Prefer a PDF version? [Download my resume](https://github.com/shayansm2/shayansm2.github.io/releases/download/resume/resume_shayanShafieeMoghadam.pdf)**
+<!-- **Prefer a PDF version? [Download my resume](https://github.com/shayansm2/shayansm2.github.io/releases/download/resume/resume_shayanShafieeMoghadam.pdf)** -->
 
 # WORK EXPERIENCE
 
@@ -13,7 +13,7 @@ title = 'Resume'
     <img src="https://media.licdn.com/dms/image/v2/C4D0BAQFIOmQcwTXY5g/company-logo_100_100/company-logo_100_100/0/1630513308234/hamravesh_logo?e=1752710400&v=beta&t=TITd5IY69lWY8N6JUJToOIlKRcIlTRVMNJ6znd1pQV4" alt="Company Logo" 
          style="width: 40px; height: 40px; object-fit: contain;" />
     <div style="display: flex; flex-direction: column;">
-      <div style="font-weight: bold; font-size: 1.1em;">Software Engineer</div>
+      <div style="font-weight: bold; font-size: 1.1em;">Senior Software Engineer</div>
       <div>
         <a href="https://hamravesh.com/" target="_blank" rel="noopener noreferrer" 
          style="text-decoration: none; font-size: 0.9em;">Hamravesh Cloud</a>
@@ -27,18 +27,19 @@ title = 'Resume'
   </div>
 </div>
 
+- Contributed to the Backup Service at Hamravesh Cloud (leading PaaS provider in Iran)–a critical microservice managing automated, cross-cluster backups across distributed Kubernetes environments.
 - Developed the core billing and pricing system for backup service, generating monthly revenue of +300 million tomans.
-- Redesigned and migrated backup service pages using Django (API) and React (frontend), and led the transition from a monolith to microservices—including deployment and database migration—enabling development team autonomy.
+- Redesigned and migrated backup service pages using Django (API) and React (frontend), and led the transition from a monolith to microservices—including deployment, CI/CD, and database migration—enabling development team autonomy.
 - Analyzed and identified recurring operational tasks in the backup system, designed and implemented two automated workflows using Temporal—for snapshot migration and backup garbage collection—resulting in a ~40% reduction in operational workload and ~20% increase in backup storage capacity without added infrastructure costs.
 
-<div class="custom-html" style="display: flex; align-items: center; justify-content: space-between; padding: 10px 0; font-family: Arial, sans-serif;">
+<!-- <div class="custom-html" style="display: flex; align-items: center; justify-content: space-between; padding: 10px 0; font-family: Arial, sans-serif;">
   <div style="display: flex; align-items: center; gap: 15px;">
-    <img src="https://media.licdn.com/dms/image/v2/D4D0BAQG7Yx-JnkeKww/company-logo_100_100/company-logo_100_100/0/1715671804727/venue_wise_logo?e=1752710400&v=beta&t=0e1FGuezZo6uUGC7MwGT4IzUGcEBCY1dojGDyDfew1E" alt="Company Logo" 
+    <img src="https://media.licdn.com/dms/image/v2/D4D0BAQG7Yx-JnkeKww/company-logo_100_100/company-logo_100_100/0/1715671804727/venue_wise_logo?e=1752710400&v=beta&t=0e1FGuezZo6uUGC7MwGT4IzUGcEBCY1dojGDyDfew1E" alt="Company Logo"
          style="width: 40px; height: 40px; object-fit: contain;" />
     <div style="display: flex; flex-direction: column;">
       <div style="font-weight: bold; font-size: 1.1em;">Software Engineer</div>
       <div>
-        <a href="https://venuewise.com/" target="_blank" rel="noopener noreferrer" 
+        <a href="https://venuewise.com/" target="_blank" rel="noopener noreferrer"
          style="text-decoration: none; font-size: 0.9em;">Venue Wise</a>
       </div>
     </div>
@@ -48,10 +49,10 @@ title = 'Resume'
       May 2024 - Jul 2024 (3 mos)
       <div style="font-size: 0.85em;">Dubai, United Arab Emirates (Remote) . Contract</div>
   </div>
-</div>
+</div> -->
 
-- Integrated the existing system with Zoho CRM, streamlining customer relationship follow-ups and reducing manual data entry, improving sales team efficiency.
-- Implemented event-driven architecture in the Laravel-based project, reducing average request processing time and decoupling business logic, which accelerated feature development.
+<!-- - Integrated the existing system with Zoho CRM, streamlining customer relationship follow-ups and reducing manual data entry, improving sales team efficiency.
+- Implemented event-driven architecture in the Laravel-based project, reducing average request processing time and decoupling business logic, which accelerated feature development. -->
 
 <div class="custom-html" style="display: flex; align-items: center; justify-content: space-between; padding: 10px 0; font-family: Arial, sans-serif;">
   <div style="display: flex; align-items: center; gap: 15px;">
@@ -61,7 +62,7 @@ title = 'Resume'
       <div style="font-weight: bold; font-size: 1.1em;">Senior Software Engineer</div>
       <div>
         <a href="https://www.digikala.com/" target="_blank" rel="noopener noreferrer" 
-         style="text-decoration: none; font-size: 0.9em;">Digikala</a>
+         style="text-decoration: none; font-size: 0.9em;">Digikala E-commerce</a>
       </div>
     </div>
 
@@ -85,7 +86,7 @@ title = 'Resume'
       <div style="font-weight: bold; font-size: 1.1em;">Software Engineer</div>
       <div>
         <a href="https://www.digikala.com/" target="_blank" rel="noopener noreferrer" 
-         style="text-decoration: none; font-size: 0.9em;">Digikala</a>
+         style="text-decoration: none; font-size: 0.9em;">Digikala E-commerce</a>
       </div>
     </div>
 
@@ -100,16 +101,17 @@ title = 'Resume'
 - Developed a PHP Snowplow SDK to track user activities and transmit events to the big data team, improving data accuracy and providing actionable insights for big data and marketing teams to drive decision-making.
 - Built and deployed a new cashback system for Prime users, enhancing user loyalty and driving a 30% increase in repeat purchases among Prime members.
 - Developed a Python framework for generating reports and analytics from Jira data, leveraging Python data pipelines, PostgreSQL, and DBT. This automation streamlined Scrum Master tasks, reducing the team’s dependency on one full-time Scrum Master and improving operational efficiency.
+- Led a 6-person team, as a Bootcamp Instructor, through intensive software engineering instruction over 2 months, provided technical guidance and project oversight, resulting in hiring 4 bootcamp graduates.
 
-<div class="custom-html" style="display: flex; align-items: center; justify-content: space-between; padding: 10px 0; font-family: Arial, sans-serif;">
+<!-- <div class="custom-html" style="display: flex; align-items: center; justify-content: space-between; padding: 10px 0; font-family: Arial, sans-serif;">
   <div style="display: flex; align-items: center; gap: 15px;">
-    <img src="https://media.licdn.com/dms/image/v2/C4D0BAQGshHg22ds-ug/company-logo_100_100/company-logo_100_100/0/1652508506193/digikala_logo?e=1752710400&v=beta&t=E5-4IITE8O_B8whLN0NlZ5R9RJcs5h8ck4SpJWRE9-M" alt="Company Logo" 
+    <img src="https://media.licdn.com/dms/image/v2/C4D0BAQGshHg22ds-ug/company-logo_100_100/company-logo_100_100/0/1652508506193/digikala_logo?e=1752710400&v=beta&t=E5-4IITE8O_B8whLN0NlZ5R9RJcs5h8ck4SpJWRE9-M" alt="Company Logo"
          style="width: 40px; height: 40px; object-fit: contain;" />
     <div style="display: flex; flex-direction: column;">
       <div style="font-weight: bold; font-size: 1.1em;">Bootcamp Instructor</div>
       <div>
-        <a href="https://www.digikala.com/" target="_blank" rel="noopener noreferrer" 
-         style="text-decoration: none; font-size: 0.9em;">Digikala</a>
+        <a href="https://www.digikala.com/" target="_blank" rel="noopener noreferrer"
+         style="text-decoration: none; font-size: 0.9em;">Digikala E-commerce</a>
       </div>
     </div>
 
@@ -118,9 +120,7 @@ title = 'Resume'
       Jul 2022 - Sep 2022 (3 mos)
       <div style="font-size: 0.85em;">Tehran - Iran . Part-time</div>
   </div>
-</div>
-
-- Led a 6-person team through intensive software engineering instruction over 2 months, provided technical guidance and project oversight, resulting in hiring 4 bootcamp graduates.
+</div> -->
 
 <div class="custom-html" style="display: flex; align-items: center; justify-content: space-between; padding: 10px 0; font-family: Arial, sans-serif;">
   <div style="display: flex; align-items: center; gap: 15px;">
@@ -130,7 +130,7 @@ title = 'Resume'
       <div style="font-weight: bold; font-size: 1.1em;">Data Analyst</div>
       <div>
         <a href="https://www.digikala.com/" target="_blank" rel="noopener noreferrer" 
-         style="text-decoration: none; font-size: 0.9em;">Digikala</a>
+         style="text-decoration: none; font-size: 0.9em;">Digikala E-commerce</a>
       </div>
     </div>
 
@@ -144,14 +144,14 @@ title = 'Resume'
 - Proposed a Profit Contribution (PC2) calculation model aimed at providing insights for optimizing operational costs and boosting revenue.
 - Developed a discount optimization model and its accompanying data pipeline utilizing Python, PowerBI, and SQL Server, resulting in providing enhanced recommendations to the business for setting optimal discounts, thereby increasing revenue.
 
-<div class="custom-html" style="display: flex; align-items: center; justify-content: space-between; padding: 10px 0; font-family: Arial, sans-serif;">
+<!-- <div class="custom-html" style="display: flex; align-items: center; justify-content: space-between; padding: 10px 0; font-family: Arial, sans-serif;">
   <div style="display: flex; align-items: center; gap: 15px;">
-    <img src="https://media.licdn.com/dms/image/v2/C560BAQFaRNyDG5O8Cg/company-logo_100_100/company-logo_100_100/0/1630625333751/bluebitsoft_logo?e=1752710400&v=beta&t=q2sva6ksAVz0mMULXkfSmr4TUYRX9sLIUEjzoxfWh5Y" alt="Company Logo" 
+    <img src="https://media.licdn.com/dms/image/v2/C560BAQFaRNyDG5O8Cg/company-logo_100_100/company-logo_100_100/0/1630625333751/bluebitsoft_logo?e=1752710400&v=beta&t=q2sva6ksAVz0mMULXkfSmr4TUYRX9sLIUEjzoxfWh5Y" alt="Company Logo"
          style="width: 40px; height: 40px; object-fit: contain;" />
     <div style="display: flex; flex-direction: column;">
       <div style="font-weight: bold; font-size: 1.1em;">Business Intelligence Analyst</div>
       <div>
-        <a href="https://bluebitsoft.codes/" target="_blank" rel="noopener noreferrer" 
+        <a href="https://bluebitsoft.codes/" target="_blank" rel="noopener noreferrer"
          style="text-decoration: none; font-size: 0.9em;">BlueBitSoft</a>
       </div>
     </div>
@@ -165,7 +165,7 @@ title = 'Resume'
 
 ###
 
-- Developed and enhanced visualization dashboards in PowerBI to deliver actionable managerial insights.
+- Developed and enhanced visualization dashboards in PowerBI to deliver actionable managerial insights. -->
 
 ---
 

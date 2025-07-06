@@ -42,8 +42,8 @@ params:
       url: "https://mastodon.social/@shayansm"
     - name: email
       url: "mailto:shayan.shafiee.moghadam@gmail.com"
-    - name: cv
-      url: "https://github.com/shayansm2/shayansm2.github.io/releases/download/resume/resume_shayanShafieeMoghadam.pdf"
+    # - name: cv
+    # url: "https://github.com/shayansm2/shayansm2.github.io/releases/download/resume/resume_shayanShafieeMoghadam.pdf"
 
 markup:
   goldmark:
