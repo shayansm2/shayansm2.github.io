@@ -41,7 +41,7 @@
 &lt;h1 id=&#34;work-experience&#34;&gt;WORK EXPERIENCE&lt;/h1&gt;
 &lt;div class=&#34;custom-html&#34; style=&#34;display: flex; align-items: center; justify-content: space-between; padding: 10px 0; font-family: Arial, sans-serif;&#34;&gt;
   &lt;div style=&#34;display: flex; align-items: center; gap: 15px;&#34;&gt;
-    &lt;img src=&#34;https://media.licdn.com/dms/image/v2/C4D0BAQFIOmQcwTXY5g/company-logo_100_100/company-logo_100_100/0/1630513308234/hamravesh_logo?e=1752710400&amp;v=beta&amp;t=TITd5IY69lWY8N6JUJToOIlKRcIlTRVMNJ6znd1pQV4&#34; alt=&#34;Company Logo&#34; 
+    &lt;img src=&#34;http://localhost:1313/hamravesh.png&#34; alt=&#34;Hamravesh&#34; 
          style=&#34;width: 40px; height: 40px; object-fit: contain;&#34; /&gt;
     &lt;div style=&#34;display: flex; flex-direction: column;&#34;&gt;
       &lt;div style=&#34;font-weight: bold; font-size: 1.1em;&#34;&gt;Senior Software Engineer&lt;/div&gt;
@@ -84,7 +84,7 @@
 - Implemented event-driven architecture in the Laravel-based project, reducing average request processing time and decoupling business logic, which accelerated feature development. --&gt;
 &lt;div class=&#34;custom-html&#34; style=&#34;display: flex; align-items: center; justify-content: space-between; padding: 10px 0; font-family: Arial, sans-serif;&#34;&gt;
   &lt;div style=&#34;display: flex; align-items: center; gap: 15px;&#34;&gt;
-    &lt;img src=&#34;https://media.licdn.com/dms/image/v2/C4D0BAQGshHg22ds-ug/company-logo_100_100/company-logo_100_100/0/1652508506193/digikala_logo?e=1752710400&amp;v=beta&amp;t=E5-4IITE8O_B8whLN0NlZ5R9RJcs5h8ck4SpJWRE9-M&#34; alt=&#34;Company Logo&#34; 
+    &lt;img src=&#34;http://localhost:1313/digikala.png&#34; alt=&#34;Digikala&#34; 
          style=&#34;width: 40px; height: 40px; object-fit: contain;&#34; /&gt;
     &lt;div style=&#34;display: flex; flex-direction: column;&#34;&gt;
       &lt;div style=&#34;font-weight: bold; font-size: 1.1em;&#34;&gt;Senior Software Engineer&lt;/div&gt;
@@ -107,7 +107,7 @@
 &lt;/ul&gt;
 &lt;div class=&#34;custom-html&#34; style=&#34;display: flex; align-items: center; justify-content: space-between; padding: 10px 0; font-family: Arial, sans-serif;&#34;&gt;
   &lt;div style=&#34;display: flex; align-items: center; gap: 15px;&#34;&gt;
-    &lt;img src=&#34;https://media.licdn.com/dms/image/v2/C4D0BAQGshHg22ds-ug/company-logo_100_100/company-logo_100_100/0/1652508506193/digikala_logo?e=1752710400&amp;v=beta&amp;t=E5-4IITE8O_B8whLN0NlZ5R9RJcs5h8ck4SpJWRE9-M&#34; alt=&#34;Company Logo&#34; 
+    &lt;img src=&#34;http://localhost:1313/digikala.png&#34; alt=&#34;Digikala&#34; 
          style=&#34;width: 40px; height: 40px; object-fit: contain;&#34; /&gt;
     &lt;div style=&#34;display: flex; flex-direction: column;&#34;&gt;
       &lt;div style=&#34;font-weight: bold; font-size: 1.1em;&#34;&gt;Software Engineer&lt;/div&gt;
@@ -149,7 +149,7 @@
 &lt;/div&gt; --&gt;
 &lt;div class=&#34;custom-html&#34; style=&#34;display: flex; align-items: center; justify-content: space-between; padding: 10px 0; font-family: Arial, sans-serif;&#34;&gt;
   &lt;div style=&#34;display: flex; align-items: center; gap: 15px;&#34;&gt;
-    &lt;img src=&#34;https://media.licdn.com/dms/image/v2/C4D0BAQGshHg22ds-ug/company-logo_100_100/company-logo_100_100/0/1652508506193/digikala_logo?e=1752710400&amp;v=beta&amp;t=E5-4IITE8O_B8whLN0NlZ5R9RJcs5h8ck4SpJWRE9-M&#34; alt=&#34;Company Logo&#34; 
+    &lt;img src=&#34;http://localhost:1313/digikala.png&#34; alt=&#34;Digikala&#34; 
          style=&#34;width: 40px; height: 40px; object-fit: contain;&#34; /&gt;
     &lt;div style=&#34;display: flex; flex-direction: column;&#34;&gt;
       &lt;div style=&#34;font-weight: bold; font-size: 1.1em;&#34;&gt;Data Analyst&lt;/div&gt;
@@ -193,7 +193,7 @@
 &lt;hr&gt;
 &lt;h1 id=&#34;education&#34;&gt;EDUCATION&lt;/h1&gt;
 &lt;div style=&#34;display: flex; align-items: center; gap: 15px;&#34;&gt;
-&lt;img src=&#34;https://media.licdn.com/dms/image/v2/C4E0BAQE-NIX4SUSCOg/company-logo_100_100/company-logo_100_100/0/1631311354545?e=1752710400&amp;v=beta&amp;t=CPnmlJ32-UkdUmbnEod4_JdGQhTBp8JrgPxT0FD-Ghk&#34; alt=&#34;Company Logo&#34; 
+&lt;img src=&#34;http://localhost:1313/tehranUniversity.png&#34; alt=&#34;University of Tehran&#34; 
         style=&#34;width: 40px; height: 40px; object-fit: contain;&#34; /&gt;
 &lt;div style=&#34;display: flex; flex-direction: column;&#34;&gt;
     &lt;div style=&#34;font-weight: font-size: 1.1em;&#34;&gt;Master of Science, Systems Optimization at University of Tehran&lt;/div&gt;
@@ -203,7 +203,7 @@
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div style=&#34;display: flex; align-items: center; gap: 15px;&#34;&gt;
-&lt;img src=&#34;https://media.licdn.com/dms/image/v2/C4E0BAQE-NIX4SUSCOg/company-logo_100_100/company-logo_100_100/0/1631311354545?e=1752710400&amp;v=beta&amp;t=CPnmlJ32-UkdUmbnEod4_JdGQhTBp8JrgPxT0FD-Ghk&#34; alt=&#34;Company Logo&#34; 
+&lt;img src=&#34;http://localhost:1313/tehranUniversity.png&#34; alt=&#34;University of Tehran&#34; 
         style=&#34;width: 40px; height: 40px; object-fit: contain;&#34; /&gt;
 &lt;div style=&#34;display: flex; flex-direction: column;&#34;&gt;
     &lt;div style=&#34;font-weight: font-size: 1.1em;&#34;&gt;Bachelor of Science, Industrial Engineering at University of Tehran&lt;/div&gt;
@@ -216,7 +216,7 @@
 &lt;h1 id=&#34;certificates&#34;&gt;CERTIFICATES&lt;/h1&gt;
 &lt;div style=&#34;display: flex; gap: 20px;&#34;&gt;
   &lt;div style=&#34;flex: 1; display: flex; align-items: center; gap: 15px;&#34;&gt;
-    &lt;img src=&#34;https://media.licdn.com/dms/image/v2/C4D0BAQGexnfBxeEG-g/company-logo_100_100/company-logo_100_100/0/1630530042036/coursera_logo?e=1752710400&amp;v=beta&amp;t=ngZYW0RXzsHSP5HhPC5u4ViCa8frSoWw1cqSJv5BuHs&#34; alt=&#34;Company Logo&#34; 
+    &lt;img src=&#34;http://localhost:1313/coursera.png&#34; alt=&#34;University of California&#34; 
          style=&#34;width: 40px; height: 40px; object-fit: contain;&#34; /&gt;
     &lt;div style=&#34;display: flex; flex-direction: column;&#34;&gt;
       &lt;a href=&#34;https://www.coursera.org/account/accomplishments/verify/NYR3QBYLTVUW?utm_campaign=sharing_cta&amp;utm_content=cert_image&amp;utm_medium=certificate&amp;utm_product=course&amp;utm_source=android&#34; target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34; 
@@ -224,7 +224,7 @@
     &lt;/div&gt;
   &lt;/div&gt;
    &lt;div style=&#34;flex: 1; display: flex; align-items: center; gap: 15px;&#34;&gt;
-    &lt;img src=&#34;https://media.licdn.com/dms/image/v2/C4D0BAQGOojMZGgd04Q/company-logo_100_100/company-logo_100_100/0/1637478816527/quera_logo?e=1752710400&amp;v=beta&amp;t=Od-yLvOcn74i7kFtnF9nxDx0RE_EasU9pQca-ov-5_k&#34; alt=&#34;Company Logo&#34; 
+    &lt;img src=&#34;http://localhost:1313/quera.png&#34; alt=&#34;Quera&#34; 
          style=&#34;width: 40px; height: 40px; object-fit: contain;&#34; /&gt;
     &lt;div style=&#34;display: flex; flex-direction: column;&#34;&gt;
       &lt;a href=&#34;https://quera.org/media/public/quera_certificate/308b9b83401844eebc5f5f979530c851.jpg&#34; target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34; 
@@ -234,7 +234,7 @@
 &lt;/div&gt;
 &lt;div style=&#34;display: flex; gap: 20px;&#34;&gt;
 &lt;div style=&#34;flex: 1; display: flex; align-items: center; gap: 15px;&#34;&gt;
-    &lt;img src=&#34;https://media.licdn.com/dms/image/v2/D560BAQG2k4od1BnFYw/company-logo_100_100/company-logo_100_100/0/1719946312124/temporal_technologies_logo?e=1752710400&amp;v=beta&amp;t=WIGHAhiBU69Wpqc8iQeT-6wepJnCYFP8EoDUcLZlFXQ&#34; alt=&#34;Company Logo&#34; 
+    &lt;img src=&#34;http://localhost:1313/temporal.png&#34; alt=&#34;Temporal&#34; 
          style=&#34;width: 40px; height: 40px; object-fit: contain;&#34; /&gt;
     &lt;div style=&#34;display: flex; flex-direction: column;&#34;&gt;
       &lt;a href=&#34;https://ibb.co/JyL4jMG&#34; target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34; 
@@ -242,7 +242,7 @@
     &lt;/div&gt;
   &lt;/div&gt;  
     &lt;div style=&#34;flex: 1; display: flex; align-items: center; gap: 15px;&#34;&gt;
-    &lt;img src=&#34;https://media.licdn.com/dms/image/v2/C4D0BAQGOojMZGgd04Q/company-logo_100_100/company-logo_100_100/0/1637478816527/quera_logo?e=1752710400&amp;v=beta&amp;t=Od-yLvOcn74i7kFtnF9nxDx0RE_EasU9pQca-ov-5_k&#34; alt=&#34;Company Logo&#34; 
+    &lt;img src=&#34;http://localhost:1313/quera.png&#34; alt=&#34;Quera&#34; 
          style=&#34;width: 40px; height: 40px; object-fit: contain;&#34; /&gt;
     &lt;div style=&#34;display: flex; flex-direction: column;&#34;&gt;
       &lt;a href=&#34;https://quera.org/media/public/quera_certificate/6c2700964b7e4b6dbb280b328fa5a4f1.jpg&#34; target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34; 
@@ -252,7 +252,7 @@
 &lt;/div&gt;
 &lt;div style=&#34;display: flex; gap: 20px;&#34;&gt;
   &lt;div style=&#34;flex: 1; display: flex; align-items: center; gap: 15px;&#34;&gt;
-    &lt;img src=&#34;https://media.licdn.com/dms/image/v2/C4D0BAQGOojMZGgd04Q/company-logo_100_100/company-logo_100_100/0/1637478816527/quera_logo?e=1752710400&amp;v=beta&amp;t=Od-yLvOcn74i7kFtnF9nxDx0RE_EasU9pQca-ov-5_k&#34; alt=&#34;Company Logo&#34; 
+    &lt;img src=&#34;http://localhost:1313/quera.png&#34; alt=&#34;Quera&#34; 
          style=&#34;width: 40px; height: 40px; object-fit: contain;&#34; /&gt;
     &lt;div style=&#34;display: flex; flex-direction: column;&#34;&gt;
       &lt;a href=&#34;https://quera.org/media/public/quera_certificate/057908bf78d341e5a6c31d3cf2d2687f.jpg&#34; target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34; 
@@ -260,7 +260,7 @@
     &lt;/div&gt;
   &lt;/div&gt;
   &lt;div style=&#34;flex: 1; display: flex; align-items: center; gap: 15px;&#34;&gt;
-    &lt;img src=&#34;https://media.licdn.com/dms/image/v2/D4E0BAQH5aAQ1JS53KA/company-logo_100_100/company-logo_100_100/0/1714461206742?e=1753315200&amp;v=beta&amp;t=Voi6CuCwsqS0oAf-8as7LXk_TgpSoFUg79O2bp0xAaA&#34; alt=&#34;Company Logo&#34; 
+    &lt;img src=&#34;http://localhost:1313/arvan.png&#34; alt=&#34;Arvan Cloud&#34; 
          style=&#34;width: 40px; height: 40px; object-fit: contain;&#34; /&gt;
     &lt;div style=&#34;display: flex; flex-direction: column;&#34;&gt;
       &lt;a href=&#34;https://academy.arvancloud.ir/certificate/12721AC71-34F6884-33F89A2/&#34; target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34; 
@@ -270,7 +270,7 @@
 &lt;/div&gt;
 &lt;div style=&#34;display: flex; gap: 20px;&#34;&gt;
     &lt;div style=&#34;flex: 1; display: flex; align-items: center; gap: 15px;&#34;&gt;
-    &lt;img src=&#34;https://media.licdn.com/dms/image/v2/C4D0BAQGOojMZGgd04Q/company-logo_100_100/company-logo_100_100/0/1637478816527/quera_logo?e=1752710400&amp;v=beta&amp;t=Od-yLvOcn74i7kFtnF9nxDx0RE_EasU9pQca-ov-5_k&#34; alt=&#34;Company Logo&#34; 
+    &lt;img src=&#34;http://localhost:1313/quera.png&#34; alt=&#34;Quera&#34; 
          style=&#34;width: 40px; height: 40px; object-fit: contain;&#34; /&gt;
     &lt;div style=&#34;display: flex; flex-direction: column;&#34;&gt;
       &lt;a href=&#34;https://quera.org/media/public/quera_certificate/f8df1a6cae9941449b2d6c0f206ff8bb.jpg&#34; target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34; 
@@ -278,7 +278,7 @@
     &lt;/div&gt;
   &lt;/div&gt;
   &lt;div style=&#34;flex: 1; display: flex; align-items: center; gap: 15px;&#34;&gt;
-    &lt;img src=&#34;https://media.licdn.com/dms/image/v2/C4D0BAQFY84TXDGjQTA/company-logo_100_100/company-logo_100_100/0/1640896517353/datatalks_club_logo?e=1752710400&amp;v=beta&amp;t=b9hWqMA8t1hrbD7bDe9jqlNvRVxLIxOTSeuvTQKjo9M&#34; alt=&#34;Company Logo&#34; 
+    &lt;img src=&#34;http://localhost:1313/datatalksclub.png&#34; alt=&#34;DataTalks Club&#34; 
          style=&#34;width: 40px; height: 40px; object-fit: contain;&#34; /&gt;
     &lt;div style=&#34;display: flex; flex-direction: column;&#34;&gt;
       &lt;a href=&#34;https://certificate.datatalks.club/dezoomcamp/2024/3481f400d17ea5bdcaed692c4709d6b657a588e2.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34; 
@@ -288,7 +288,7 @@
 &lt;/div&gt;
 &lt;div style=&#34;display: flex; gap: 20px;&#34;&gt;
   &lt;div style=&#34;flex: 1; display: flex; align-items: center; gap: 15px;&#34;&gt;
-    &lt;img src=&#34;https://media.licdn.com/dms/image/v2/C4D0BAQFzIxlpQ0lAdA/company-logo_100_100/company-logo_100_100/0/1630556211624/huggingface_logo?e=1752710400&amp;v=beta&amp;t=06QTNa6Jky4dVykFXQ_bN3jD7baKGpSrXCkams_lUik&#34; alt=&#34;Company Logo&#34; 
+    &lt;img src=&#34;http://localhost:1313/huggoingface.png&#34; alt=&#34;Hugging Face&#34; 
          style=&#34;width: 40px; height: 40px; object-fit: contain;&#34; /&gt;
     &lt;div style=&#34;display: flex; flex-direction: column;&#34;&gt;
       &lt;a href=&#34;https://huggingface.co/datasets/agents-course/certificates/resolve/main/certificates/Shyone/2025-03-04.png&#34; target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34; 
@@ -296,7 +296,7 @@
     &lt;/div&gt;
   &lt;/div&gt;
     &lt;div style=&#34;flex: 1; display: flex; align-items: center; gap: 15px;&#34;&gt;
-    &lt;img src=&#34;https://media.licdn.com/dms/image/v2/C560BAQGYxjMn8Ejunw/company-logo_100_100/company-logo_100_100/0/1630649588321/fishtown_analytics_logo?e=1752710400&amp;v=beta&amp;t=e2IWfQJo-oRvuxzdtusRWU_NBE5zCXmpxiQvr2vJiSk&#34; alt=&#34;Company Logo&#34; 
+    &lt;img src=&#34;http://localhost:1313/dbt.png&#34; alt=&#34;DBT&#34; 
          style=&#34;width: 40px; height: 40px; object-fit: contain;&#34; /&gt;
     &lt;div style=&#34;display: flex; flex-direction: column;&#34;&gt;
       &lt;a href=&#34;https://www.credential.net/c7417459-3a44-41cc-8121-a9526598d224#gs.4osv01&#34; target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34; 
@@ -306,7 +306,7 @@
 &lt;/div&gt;
 &lt;div style=&#34;display: flex; gap: 20px;&#34;&gt;
   &lt;div style=&#34;flex: 1; display: flex; align-items: center; gap: 15px;&#34;&gt;
-    &lt;img src=&#34;https://media.licdn.com/dms/image/v2/C4D0BAQFY84TXDGjQTA/company-logo_100_100/company-logo_100_100/0/1640896517353/datatalks_club_logo?e=1752710400&amp;v=beta&amp;t=b9hWqMA8t1hrbD7bDe9jqlNvRVxLIxOTSeuvTQKjo9M&#34; alt=&#34;Company Logo&#34; 
+    &lt;img src=&#34;http://localhost:1313/datatalksclub.png&#34; alt=&#34;DataTalks Club&#34; 
          style=&#34;width: 40px; height: 40px; object-fit: contain;&#34; /&gt;
     &lt;div style=&#34;display: flex; flex-direction: column;&#34;&gt;
       &lt;a href=&#34;https://certificate.datatalks.club/ml-zoomcamp/2023/3481f400d17ea5bdcaed692c4709d6b657a588e2.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34; 
@@ -314,7 +314,7 @@
     &lt;/div&gt;
   &lt;/div&gt;
   &lt;div style=&#34;flex: 1; display: flex; align-items: center; gap: 15px;&#34;&gt;
-    &lt;img src=&#34;https://media.licdn.com/dms/image/v2/C4D0BAQGexnfBxeEG-g/company-logo_100_100/company-logo_100_100/0/1630530042036/coursera_logo?e=1752710400&amp;v=beta&amp;t=ngZYW0RXzsHSP5HhPC5u4ViCa8frSoWw1cqSJv5BuHs&#34; alt=&#34;Company Logo&#34; 
+    &lt;img src=&#34;http://localhost:1313/coursera.png&#34; alt=&#34;DeepLearning.AI&#34; 
          style=&#34;width: 40px; height: 40px; object-fit: contain;&#34; /&gt;
     &lt;div style=&#34;display: flex; flex-direction: column;&#34;&gt;
       &lt;a href=&#34;https://www.coursera.org/account/accomplishments/verify/4VJK5VNUJFKS?utm_source=link&amp;utm_medium=certificate&amp;utm_content=cert_image&amp;utm_campaign=sharing_cta&amp;utm_product=course&#34; target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34; 
@@ -324,7 +324,7 @@
 &lt;/div&gt;
 &lt;div style=&#34;display: flex; gap: 20px;&#34;&gt;
     &lt;div style=&#34;flex: 1; display: flex; align-items: center; gap: 15px;&#34;&gt;
-    &lt;img src=&#34;https://media.licdn.com/dms/image/v2/C4D0BAQGexnfBxeEG-g/company-logo_100_100/company-logo_100_100/0/1630530042036/coursera_logo?e=1752710400&amp;v=beta&amp;t=ngZYW0RXzsHSP5HhPC5u4ViCa8frSoWw1cqSJv5BuHs&#34; alt=&#34;Company Logo&#34; 
+    &lt;img src=&#34;http://localhost:1313/coursera.png&#34; alt=&#34;DeepLearning.AI&#34; 
          style=&#34;width: 40px; height: 40px; object-fit: contain;&#34; /&gt;
     &lt;div style=&#34;display: flex; flex-direction: column;&#34;&gt;
       &lt;a href=&#34;https://www.coursera.org/account/accomplishments/verify/BB5PV5BQUS68?utm_source=link&amp;utm_medium=certificate&amp;utm_content=cert_image&amp;utm_campaign=sharing_cta&amp;utm_product=course&#34; target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34; 

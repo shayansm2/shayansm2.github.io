@@ -20,7 +20,7 @@ params:
     subtitle: >
       <p align="left">I'm a software engineer with over five years of experience building and scaling resilient systems—mostly in e-commerce and cloud platforms. My passion lies in designing robust architectures, improving development workflows, and helping teams work more efficiently through automation and thoughtful engineering.</p>
       <p align="left">I love taking ownership of complex challenges, collaborating across teams, and finding ways to make both products and processes better. Whether it's optimizing performance, leading technical initiatives, or mentoring teammates, I thrive on making a meaningful impact.</p>
-    imageUrl: "https://avatars.githubusercontent.com/u/73420694?v=4"
+    imageUrl: "/me.png"
     imageWidth: 180
     imageHeight: 180
     buttons:
