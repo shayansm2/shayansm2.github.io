@@ -172,7 +172,7 @@ title = 'Resume'
 # EDUCATION
 
 <div style="display: flex; align-items: center; gap: 15px;">
-<img src="/tehranUniversity.png" alt="University of Tehran" 
+<img src="/TehranUniversity.png" alt="University of Tehran" 
         style="width: 40px; height: 40px; object-fit: contain;" />
 <div style="display: flex; flex-direction: column;">
     <div style="font-weight: font-size: 1.1em;">Master of Science, Systems Optimization at University of Tehran</div>
@@ -183,7 +183,7 @@ title = 'Resume'
 </div>
 
 <div style="display: flex; align-items: center; gap: 15px;">
-<img src="/tehranUniversity.png" alt="University of Tehran" 
+<img src="/TehranUniversity.png" alt="University of Tehran" 
         style="width: 40px; height: 40px; object-fit: contain;" />
 <div style="display: flex; flex-direction: column;">
     <div style="font-weight: font-size: 1.1em;">Bachelor of Science, Industrial Engineering at University of Tehran</div>
