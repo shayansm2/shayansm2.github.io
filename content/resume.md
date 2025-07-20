@@ -37,7 +37,7 @@ title = 'Resume'
     <img src="/venuewise.png" alt="Venue Wise"
          style="width: 40px; height: 40px; object-fit: contain;" />
     <div style="display: flex; flex-direction: column;">
-      <div style="font-weight: bold; font-size: 1.1em;">Senior Software Engineer</div>
+      <div style="font-weight: bold; font-size: 1.1em;">Senior Backend Engineer</div>
       <div>
         <a href="https://venuewise.com/" target="_blank" rel="noopener noreferrer"
          style="text-decoration: none; font-size: 0.9em;">Venue Wise</a>
