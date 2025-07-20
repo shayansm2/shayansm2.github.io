@@ -127,7 +127,7 @@ title = 'Resume'
     <img src="/digikala.png" alt="Digikala" 
          style="width: 40px; height: 40px; object-fit: contain;" />
     <div style="display: flex; flex-direction: column;">
-      <div style="font-weight: bold; font-size: 1.1em;">Data Analyst</div>
+      <div style="font-weight: bold; font-size: 1.1em;">Business Intelligence Analyst</div>
       <div>
         <a href="https://www.digikala.com/" target="_blank" rel="noopener noreferrer" 
          style="text-decoration: none; font-size: 0.9em;">Digikala E-commerce</a>
