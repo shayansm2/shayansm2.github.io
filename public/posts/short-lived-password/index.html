@@ -131,7 +131,39 @@
 <figure class="entry-cover">
         <img loading="eager" src="https://substackcdn.com/image/fetch/$s_!Qh7q!,w_1040,h_545,c_fill,f_webp,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F936023c5-a3e3-4e25-8ca2-e8085d5c3def_1100x788.png" alt="">
         
-</figure>
+</figure><div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#problem" aria-label="Problem">Problem</a></li>
+                <li>
+                    <a href="#1st-solution-the-simple-api-call" aria-label="1st solution: the simple API call">1st solution: the simple API call</a></li>
+                <li>
+                    <a href="#2nd-solution-add-local-cache" aria-label="2nd solution: add local cache">2nd solution: add local cache</a></li>
+                <li>
+                    <a href="#3rd-solution-add-shared-cache" aria-label="3rd solution: add shared cache">3rd solution: add shared cache</a></li>
+                <li>
+                    <a href="#4th-solution-shared-and-local-cache-together" aria-label="4th solution: shared and local cache together">4th solution: shared and local cache together</a></li>
+                <li>
+                    <a href="#5th-solution-rely-on-permission-denied-responses" aria-label="5th solution: rely on permission denied responses">5th solution: rely on permission denied responses</a></li>
+                <li>
+                    <a href="#6th-solution-auto-refresh" aria-label="6th solution: auto-refresh">6th solution: auto-refresh</a></li>
+                <li>
+                    <a href="#7th-solution-auto-refresher-node" aria-label="7th solution: auto-refresher node">7th solution: auto-refresher node</a></li>
+                <li>
+                    <a href="#8th-solution-auto-refresher-node-with-fallback" aria-label="8th solution: auto-refresher node with fallback">8th solution: auto-refresher node with fallback</a></li>
+                <li>
+                    <a href="#conclusion" aria-label="Conclusion">Conclusion</a>
+                </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
   <div class="post-content"><p>At my workplace, I was given a task: use short-lived kubeconfig for accessing Kubernetes. This was already implemented in other services in different ways, and I was asked to simply choose one of them and copy-paste it into the service I was working on. That was my plan — but when I read the code, lots of questions came to my mind about the decisions developers had made for implementing the feature.</p>
 <p>After a while, I noticed that not only was I not copying their code into the codebase, but I was also analyzing their solutions, listing each one’s pros and cons, and even coming up with my own approach. It felt like a realistic system design interview: I was trying to identify problems, find single points of failures, and provide improvements — even if they introduced more complexity.</p>
 <p>This blog aims to present the problem and all the solutions that came to my mind for solving it, along with their benefits and drawbacks.</p>

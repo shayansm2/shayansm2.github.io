@@ -1,6 +1,7 @@
 +++
 date = '2025-09-11T01:21:25+03:30'
 title = 'Short-lived password: a self interview'
+showToC = true
 [cover]
 image = "https://substackcdn.com/image/fetch/$s_!Qh7q!,w_1040,h_545,c_fill,f_webp,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F936023c5-a3e3-4e25-8ca2-e8085d5c3def_1100x788.png"
 +++
