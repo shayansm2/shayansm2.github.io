@@ -6,8 +6,15 @@
     <description>Recent content on Shayan Shafiee Moghadam</description>
     <generator>Hugo -- 0.147.0</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 06 Jun 2025 23:16:03 +0330</lastBuildDate>
+    <lastBuildDate>Thu, 11 Sep 2025 01:21:25 +0330</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Short-lived password: a self interview</title>
+      <link>http://localhost:1313/posts/short-lived-password/</link>
+      <pubDate>Thu, 11 Sep 2025 01:21:25 +0330</pubDate>
+      <guid>http://localhost:1313/posts/short-lived-password/</guid>
+      <description>&lt;p&gt;At my workplace, I was given a task: use short-lived kubeconfig for accessing Kubernetes. This was already implemented in other services in different ways, and I was asked to simply choose one of them and copy-paste it into the service I was working on. That was my plan — but when I read the code, lots of questions came to my mind about the decisions developers had made for implementing the feature.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Database Index Internals</title>
       <link>http://localhost:1313/posts/db-index/</link>
@@ -153,7 +160,7 @@
     &lt;img src=&#34;http://localhost:1313/digikala.png&#34; alt=&#34;Digikala&#34; 
          style=&#34;width: 40px; height: 40px; object-fit: contain;&#34; /&gt;
     &lt;div style=&#34;display: flex; flex-direction: column;&#34;&gt;
-      &lt;div style=&#34;font-weight: bold; font-size: 1.1em;&#34;&gt;Data Analyst&lt;/div&gt;
+      &lt;div style=&#34;font-weight: bold; font-size: 1.1em;&#34;&gt;Business Intelligence Analyst&lt;/div&gt;
       &lt;div&gt;
         &lt;a href=&#34;https://www.digikala.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34; 
          style=&#34;text-decoration: none; font-size: 0.9em;&#34;&gt;Digikala E-commerce&lt;/a&gt;

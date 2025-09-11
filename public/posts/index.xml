@@ -6,8 +6,15 @@
     <description>Recent content in Posts on Shayan Shafiee Moghadam</description>
     <generator>Hugo -- 0.147.0</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 06 Jun 2025 23:16:03 +0330</lastBuildDate>
+    <lastBuildDate>Thu, 11 Sep 2025 01:21:25 +0330</lastBuildDate>
     <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Short-lived password: a self interview</title>
+      <link>http://localhost:1313/posts/short-lived-password/</link>
+      <pubDate>Thu, 11 Sep 2025 01:21:25 +0330</pubDate>
+      <guid>http://localhost:1313/posts/short-lived-password/</guid>
+      <description>&lt;p&gt;At my workplace, I was given a task: use short-lived kubeconfig for accessing Kubernetes. This was already implemented in other services in different ways, and I was asked to simply choose one of them and copy-paste it into the service I was working on. That was my plan — but when I read the code, lots of questions came to my mind about the decisions developers had made for implementing the feature.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Database Index Internals</title>
       <link>http://localhost:1313/posts/db-index/</link>

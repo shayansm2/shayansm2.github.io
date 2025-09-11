@@ -2,7 +2,7 @@
 date = '2024-12-16T09:14:38+03:30'
 title = 'My Personal Journey into Learning Kubernetes'
 [cover]
-image = "https://assets.bytebytego.com/diagrams/0110-kubernetes-tools-stack-wheel.png"
+image = "https://codefresh.io/wp-content/uploads/2023/07/Intro-to-Kubernetes-blog-b-2.png"
 +++
 
 For the last three months, I’ve been diving deep into Kubernetes as part of my new job, and I decided to write this blog to share my journey in learning Kubernetes. If you work in a DevOps role or your company operates on Kubernetes, understanding it inside and out is essential. However, as a software engineer, I also encourage every other software engineer to learn Kubernetes. Here’s why:

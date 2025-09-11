@@ -4,7 +4,7 @@ title = 'Database Scaling: A Self-Interview'
 showToC = true
 TocOpen = true
 [cover]
-image = "https://assets.bytebytego.com/diagrams/0161-database-scaling-cheatsheet.png"
+image = "https://sdmntprsouthcentralus.oaiusercontent.com/files/00000000-b3d4-61f7-a837-1db67180f83f/raw?se=2025-09-11T10%3A50%3A12Z&sp=r&sv=2024-08-04&sr=b&scid=388b9b56-be6a-5f00-ab00-b07083596cf0&skoid=f05d6a75-3c59-41ae-be2c-51a75f29841e&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-09-11T05%3A37%3A29Z&ske=2025-09-12T05%3A37%3A29Z&sks=b&skv=2024-08-04&sig=9NfhpY6OKjWsCscsp%2BwxwLKrxDSuFhoplEiikbdoYrY%3D"
 +++
 
 In my previous job, I conducted multiple technical interviews, and one of the key questions we asked candidates was:
