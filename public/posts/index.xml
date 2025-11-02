@@ -6,8 +6,16 @@
     <description>Recent content in Posts on Shayan Shafiee Moghadam</description>
     <generator>Hugo -- 0.147.0</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 11 Sep 2025 01:21:25 +0330</lastBuildDate>
+    <lastBuildDate>Sun, 02 Nov 2025 09:18:06 +0330</lastBuildDate>
     <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>My Thoughts on LLMs and Building AI Products</title>
+      <link>http://localhost:1313/posts/llm-askhn/</link>
+      <pubDate>Sun, 02 Nov 2025 09:18:06 +0330</pubDate>
+      <guid>http://localhost:1313/posts/llm-askhn/</guid>
+      <description>&lt;p&gt;IIn the last few months, I’ve been working through a free, open-source course called &lt;a href=&#34;https://github.com/DataTalksClub/llm-zoomcamp&#34;&gt;LLM Zoomcamp&lt;/a&gt;, which teaches how to build &lt;strong&gt;Retrieval-Augmented Generation (RAG)&lt;/strong&gt; systems and follow best practices.&lt;/p&gt;
+&lt;p&gt;While there were additional materials about &lt;strong&gt;agentic RAGs&lt;/strong&gt; and &lt;strong&gt;function calling (agents)&lt;/strong&gt; — which were quite fun — the main direction of the course was toward building and understanding &lt;strong&gt;simple RAGs&lt;/strong&gt;: how they work, how to connect them to vector databases, and how to evaluate and monitor them.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Short-lived password: a self interview</title>
       <link>http://localhost:1313/posts/short-lived-password/</link>

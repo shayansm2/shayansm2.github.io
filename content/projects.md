@@ -7,6 +7,16 @@ _These are projects I’ve built in my free time to explore new technologies, so
 
 ---
 
+### 🤖 Ask HackerNews
+
+**Temporal-powered Agentic RAG over Hacker News**  
+_An Agentic Retrieval-Augmented Generation (RAG) system that explores and indexes Hacker News content into Elasticsearch, and orchestrates RAG workflows with Temporal._
+
+**Stack:** Golang (Gin), Temporal, Elasticsearch, React, Ollama  
+**→ [View on GitHub](https://github.com/shayansm2/askhn)**, **[Blog](https://substack.com/home/post/p-176588889)**
+
+---
+
 ### 🚀 Tech Career Explorer
 
 **Data-Driven Insights for Tech Industry Careers**  
@@ -23,7 +33,7 @@ _A web-based tool for analyzing salary trends, skill demand, and career paths ac
 _Processes GitHub event data to visualize contributor activity, PR trends, and repository health via Kibana dashboards._
 
 **Stack:** Java, Elasticsearch, Redpanda, Kibana  
-**→ [View on GitHub](https://github.com/shayansm2/DE-zoomcamp-playground/tree/main/github-events-analyzer)**
+**→ [View on GitHub](https://github.com/shayansm2/github-events-analyzer)**
 
 ---
 

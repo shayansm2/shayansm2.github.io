@@ -31,6 +31,7 @@ title = 'Resume'
 - Developed the core billing and pricing system for backup service, generating monthly revenue of +300 million tomans.
 - Redesigned and migrated backup service pages using Django (API) and React (frontend), and led the transition from a monolith to microservices—including deployment, CI/CD, and database migration—enabling development team autonomy.
 - Analyzed and identified recurring operational tasks in the backup system, designed and implemented two automated workflows using Temporal—for snapshot migration and backup garbage collection—resulting in a ~40% reduction in operational workload and ~20% increase in backup storage capacity without added infrastructure costs.
+- Contributed to the Object Storage backend—a FastAPI, Pydantic, and SQLAlchemy-based microservice in Kubernetes—by integrating it with SeaweedFS for scalable, efficient storage and reduced resource usage
 
 <div class="custom-html" style="display: flex; align-items: center; justify-content: space-between; padding: 10px 0; font-family: Arial, sans-serif;">
   <div style="display: flex; align-items: center; gap: 15px;">
@@ -255,31 +256,32 @@ title = 'Resume'
 </div>
 
 <div style="display: flex; gap: 20px;">
-    <div style="flex: 1; display: flex; align-items: center; gap: 15px;">
-    <img src="/quera.png" alt="Quera" 
+<div style="flex: 1; display: flex; align-items: center; gap: 15px;">
+    <img src="/datatalksclub.png" alt="DBT" 
          style="width: 40px; height: 40px; object-fit: contain;" />
     <div style="display: flex; flex-direction: column;">
-      <a href="https://quera.org/media/public/quera_certificate/f8df1a6cae9941449b2d6c0f206ff8bb.jpg" target="_blank" rel="noopener noreferrer" 
-         style="text-decoration: none; font-size: 0.9em;">Data Structure and Algorithm</a>
+      <a href="https://certificate.datatalks.club/llm-zoomcamp/2025/3481f400d17ea5bdcaed692c4709d6b657a588e2.pdf" target="_blank" rel="noopener noreferrer" 
+         style="text-decoration: none; font-size: 0.9em;">LLM Zoomcamp</a>
     </div>
   </div>
-  <div style="flex: 1; display: flex; align-items: center; gap: 15px;">
-    <img src="/datatalksclub.png" alt="DataTalks Club" 
-         style="width: 40px; height: 40px; object-fit: contain;" />
-    <div style="display: flex; flex-direction: column;">
-      <a href="https://certificate.datatalks.club/dezoomcamp/2024/3481f400d17ea5bdcaed692c4709d6b657a588e2.pdf" target="_blank" rel="noopener noreferrer" 
-         style="text-decoration: none; font-size: 0.9em;">Data Engineering Zoomcamp</a>
-    </div>
-  </div>
-</div>
-
-<div style="display: flex; gap: 20px;">
   <div style="flex: 1; display: flex; align-items: center; gap: 15px;">
     <img src="/huggoingface.png" alt="Hugging Face" 
          style="width: 40px; height: 40px; object-fit: contain;" />
     <div style="display: flex; flex-direction: column;">
       <a href="https://huggingface.co/datasets/agents-course/certificates/resolve/main/certificates/Shyone/2025-03-04.png" target="_blank" rel="noopener noreferrer" 
          style="text-decoration: none; font-size: 0.9em;">AI Agents Fundamentals</a>
+    </div>
+  </div>
+    
+</div>
+
+<div style="display: flex; gap: 20px;">
+<div style="flex: 1; display: flex; align-items: center; gap: 15px;">
+    <img src="/datatalksclub.png" alt="DataTalks Club" 
+         style="width: 40px; height: 40px; object-fit: contain;" />
+    <div style="display: flex; flex-direction: column;">
+      <a href="https://certificate.datatalks.club/dezoomcamp/2024/3481f400d17ea5bdcaed692c4709d6b657a588e2.pdf" target="_blank" rel="noopener noreferrer" 
+         style="text-decoration: none; font-size: 0.9em;">Data Engineering Zoomcamp</a>
     </div>
   </div>
     <div style="flex: 1; display: flex; align-items: center; gap: 15px;">
@@ -301,12 +303,12 @@ title = 'Resume'
          style="text-decoration: none; font-size: 0.9em;">Machine Learning Zoomcamp</a>
     </div>
   </div>
-  <div style="flex: 1; display: flex; align-items: center; gap: 15px;">
-    <img src="/coursera.png" alt="DeepLearning.AI" 
+     <div style="flex: 1; display: flex; align-items: center; gap: 15px;">
+    <img src="/quera.png" alt="Quera" 
          style="width: 40px; height: 40px; object-fit: contain;" />
     <div style="display: flex; flex-direction: column;">
-      <a href="https://www.coursera.org/account/accomplishments/verify/4VJK5VNUJFKS?utm_source=link&utm_medium=certificate&utm_content=cert_image&utm_campaign=sharing_cta&utm_product=course" target="_blank" rel="noopener noreferrer" 
-         style="text-decoration: none; font-size: 0.9em;">Neural Networks and Deep Learning</a>
+      <a href="https://quera.org/media/public/quera_certificate/f8df1a6cae9941449b2d6c0f206ff8bb.jpg" target="_blank" rel="noopener noreferrer" 
+         style="text-decoration: none; font-size: 0.9em;">Data Structure and Algorithm</a>
     </div>
   </div>
 </div>
@@ -318,6 +320,14 @@ title = 'Resume'
     <div style="display: flex; flex-direction: column;">
       <a href="https://www.coursera.org/account/accomplishments/verify/BB5PV5BQUS68?utm_source=link&utm_medium=certificate&utm_content=cert_image&utm_campaign=sharing_cta&utm_product=course" target="_blank" rel="noopener noreferrer" 
          style="text-decoration: none; font-size: 0.9em;">Improving Deep Neural Networks</a>
+    </div>
+  </div>
+   <div style="flex: 1; display: flex; align-items: center; gap: 15px;">
+    <img src="/coursera.png" alt="DeepLearning.AI" 
+         style="width: 40px; height: 40px; object-fit: contain;" />
+    <div style="display: flex; flex-direction: column;">
+      <a href="https://www.coursera.org/account/accomplishments/verify/4VJK5VNUJFKS?utm_source=link&utm_medium=certificate&utm_content=cert_image&utm_campaign=sharing_cta&utm_product=course" target="_blank" rel="noopener noreferrer" 
+         style="text-decoration: none; font-size: 0.9em;">Neural Networks and Deep Learning</a>
     </div>
   </div>
 </div>

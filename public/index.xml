@@ -6,8 +6,16 @@
     <description>Recent content on Shayan Shafiee Moghadam</description>
     <generator>Hugo -- 0.147.0</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 11 Sep 2025 01:21:25 +0330</lastBuildDate>
+    <lastBuildDate>Sun, 02 Nov 2025 09:18:06 +0330</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>My Thoughts on LLMs and Building AI Products</title>
+      <link>http://localhost:1313/posts/llm-askhn/</link>
+      <pubDate>Sun, 02 Nov 2025 09:18:06 +0330</pubDate>
+      <guid>http://localhost:1313/posts/llm-askhn/</guid>
+      <description>&lt;p&gt;IIn the last few months, I’ve been working through a free, open-source course called &lt;a href=&#34;https://github.com/DataTalksClub/llm-zoomcamp&#34;&gt;LLM Zoomcamp&lt;/a&gt;, which teaches how to build &lt;strong&gt;Retrieval-Augmented Generation (RAG)&lt;/strong&gt; systems and follow best practices.&lt;/p&gt;
+&lt;p&gt;While there were additional materials about &lt;strong&gt;agentic RAGs&lt;/strong&gt; and &lt;strong&gt;function calling (agents)&lt;/strong&gt; — which were quite fun — the main direction of the course was toward building and understanding &lt;strong&gt;simple RAGs&lt;/strong&gt;: how they work, how to connect them to vector databases, and how to evaluate and monitor them.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Short-lived password: a self interview</title>
       <link>http://localhost:1313/posts/short-lived-password/</link>
@@ -29,15 +37,15 @@
       <guid>http://localhost:1313/projects/</guid>
       <description>&lt;p&gt;&lt;em&gt;These are projects I’ve built in my free time to explore new technologies, solve interesting problems, and push my skills beyond my full-time work.&lt;/em&gt;&lt;/p&gt;
 &lt;hr&gt;
+&lt;h3 id=&#34;-ask-hackernews&#34;&gt;🤖 Ask HackerNews&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Temporal-powered Agentic RAG over Hacker News&lt;/strong&gt;&lt;br&gt;
+&lt;em&gt;An Agentic Retrieval-Augmented Generation (RAG) system that explores and indexes Hacker News content into Elasticsearch, and orchestrates RAG workflows with Temporal.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Stack:&lt;/strong&gt; Golang (Gin), Temporal, Elasticsearch, React, Ollama&lt;br&gt;
+&lt;strong&gt;→ &lt;a href=&#34;https://github.com/shayansm2/askhn&#34;&gt;View on GitHub&lt;/a&gt;&lt;/strong&gt;, &lt;strong&gt;&lt;a href=&#34;https://substack.com/home/post/p-176588889&#34;&gt;Blog&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;hr&gt;
 &lt;h3 id=&#34;-tech-career-explorer&#34;&gt;🚀 Tech Career Explorer&lt;/h3&gt;
 &lt;p&gt;&lt;strong&gt;Data-Driven Insights for Tech Industry Careers&lt;/strong&gt;&lt;br&gt;
-&lt;em&gt;A web-based tool for analyzing salary trends, skill demand, and career paths across the tech industry.&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Stack:&lt;/strong&gt; Python, MageAI, PostgreSQL, DuckDB, DBT, Metabase&lt;br&gt;
-&lt;strong&gt;→ &lt;a href=&#34;https://github.com/shayansm2/tech-career-explorer&#34;&gt;View on GitHub&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;hr&gt;
-&lt;h3 id=&#34;-github-events-analyzer&#34;&gt;📊 GitHub Events Analyzer&lt;/h3&gt;
-&lt;p&gt;&lt;strong&gt;Real-Time Pipeline for Repository Activity Insights&lt;/strong&gt;&lt;br&gt;
-&lt;em&gt;Processes GitHub event data to visualize contributor activity, PR trends, and repository health via Kibana dashboards.&lt;/em&gt;&lt;/p&gt;</description>
+&lt;em&gt;A web-based tool for analyzing salary trends, skill demand, and career paths across the tech industry.&lt;/em&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>Resume</title>
@@ -68,6 +76,7 @@
 &lt;li&gt;Developed the core billing and pricing system for backup service, generating monthly revenue of +300 million tomans.&lt;/li&gt;
 &lt;li&gt;Redesigned and migrated backup service pages using Django (API) and React (frontend), and led the transition from a monolith to microservices—including deployment, CI/CD, and database migration—enabling development team autonomy.&lt;/li&gt;
 &lt;li&gt;Analyzed and identified recurring operational tasks in the backup system, designed and implemented two automated workflows using Temporal—for snapshot migration and backup garbage collection—resulting in a ~40% reduction in operational workload and ~20% increase in backup storage capacity without added infrastructure costs.&lt;/li&gt;
+&lt;li&gt;Contributed to the Object Storage backend—a FastAPI, Pydantic, and SQLAlchemy-based microservice in Kubernetes—by integrating it with SeaweedFS for scalable, efficient storage and reduced resource usage&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div class=&#34;custom-html&#34; style=&#34;display: flex; align-items: center; justify-content: space-between; padding: 10px 0; font-family: Arial, sans-serif;&#34;&gt;
   &lt;div style=&#34;display: flex; align-items: center; gap: 15px;&#34;&gt;
@@ -277,30 +286,30 @@
   &lt;/div&gt;
 &lt;/div&gt;
 &lt;div style=&#34;display: flex; gap: 20px;&#34;&gt;
-    &lt;div style=&#34;flex: 1; display: flex; align-items: center; gap: 15px;&#34;&gt;
-    &lt;img src=&#34;http://localhost:1313/quera.png&#34; alt=&#34;Quera&#34; 
+&lt;div style=&#34;flex: 1; display: flex; align-items: center; gap: 15px;&#34;&gt;
+    &lt;img src=&#34;http://localhost:1313/datatalksclub.png&#34; alt=&#34;DBT&#34; 
          style=&#34;width: 40px; height: 40px; object-fit: contain;&#34; /&gt;
     &lt;div style=&#34;display: flex; flex-direction: column;&#34;&gt;
-      &lt;a href=&#34;https://quera.org/media/public/quera_certificate/f8df1a6cae9941449b2d6c0f206ff8bb.jpg&#34; target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34; 
-         style=&#34;text-decoration: none; font-size: 0.9em;&#34;&gt;Data Structure and Algorithm&lt;/a&gt;
+      &lt;a href=&#34;https://certificate.datatalks.club/llm-zoomcamp/2025/3481f400d17ea5bdcaed692c4709d6b657a588e2.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34; 
+         style=&#34;text-decoration: none; font-size: 0.9em;&#34;&gt;LLM Zoomcamp&lt;/a&gt;
     &lt;/div&gt;
   &lt;/div&gt;
-  &lt;div style=&#34;flex: 1; display: flex; align-items: center; gap: 15px;&#34;&gt;
-    &lt;img src=&#34;http://localhost:1313/datatalksclub.png&#34; alt=&#34;DataTalks Club&#34; 
-         style=&#34;width: 40px; height: 40px; object-fit: contain;&#34; /&gt;
-    &lt;div style=&#34;display: flex; flex-direction: column;&#34;&gt;
-      &lt;a href=&#34;https://certificate.datatalks.club/dezoomcamp/2024/3481f400d17ea5bdcaed692c4709d6b657a588e2.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34; 
-         style=&#34;text-decoration: none; font-size: 0.9em;&#34;&gt;Data Engineering Zoomcamp&lt;/a&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;div style=&#34;display: flex; gap: 20px;&#34;&gt;
   &lt;div style=&#34;flex: 1; display: flex; align-items: center; gap: 15px;&#34;&gt;
     &lt;img src=&#34;http://localhost:1313/huggoingface.png&#34; alt=&#34;Hugging Face&#34; 
          style=&#34;width: 40px; height: 40px; object-fit: contain;&#34; /&gt;
     &lt;div style=&#34;display: flex; flex-direction: column;&#34;&gt;
       &lt;a href=&#34;https://huggingface.co/datasets/agents-course/certificates/resolve/main/certificates/Shyone/2025-03-04.png&#34; target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34; 
          style=&#34;text-decoration: none; font-size: 0.9em;&#34;&gt;AI Agents Fundamentals&lt;/a&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div style=&#34;display: flex; gap: 20px;&#34;&gt;
+&lt;div style=&#34;flex: 1; display: flex; align-items: center; gap: 15px;&#34;&gt;
+    &lt;img src=&#34;http://localhost:1313/datatalksclub.png&#34; alt=&#34;DataTalks Club&#34; 
+         style=&#34;width: 40px; height: 40px; object-fit: contain;&#34; /&gt;
+    &lt;div style=&#34;display: flex; flex-direction: column;&#34;&gt;
+      &lt;a href=&#34;https://certificate.datatalks.club/dezoomcamp/2024/3481f400d17ea5bdcaed692c4709d6b657a588e2.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34; 
+         style=&#34;text-decoration: none; font-size: 0.9em;&#34;&gt;Data Engineering Zoomcamp&lt;/a&gt;
     &lt;/div&gt;
   &lt;/div&gt;
     &lt;div style=&#34;flex: 1; display: flex; align-items: center; gap: 15px;&#34;&gt;
@@ -321,12 +330,12 @@
          style=&#34;text-decoration: none; font-size: 0.9em;&#34;&gt;Machine Learning Zoomcamp&lt;/a&gt;
     &lt;/div&gt;
   &lt;/div&gt;
-  &lt;div style=&#34;flex: 1; display: flex; align-items: center; gap: 15px;&#34;&gt;
-    &lt;img src=&#34;http://localhost:1313/coursera.png&#34; alt=&#34;DeepLearning.AI&#34; 
+     &lt;div style=&#34;flex: 1; display: flex; align-items: center; gap: 15px;&#34;&gt;
+    &lt;img src=&#34;http://localhost:1313/quera.png&#34; alt=&#34;Quera&#34; 
          style=&#34;width: 40px; height: 40px; object-fit: contain;&#34; /&gt;
     &lt;div style=&#34;display: flex; flex-direction: column;&#34;&gt;
-      &lt;a href=&#34;https://www.coursera.org/account/accomplishments/verify/4VJK5VNUJFKS?utm_source=link&amp;utm_medium=certificate&amp;utm_content=cert_image&amp;utm_campaign=sharing_cta&amp;utm_product=course&#34; target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34; 
-         style=&#34;text-decoration: none; font-size: 0.9em;&#34;&gt;Neural Networks and Deep Learning&lt;/a&gt;
+      &lt;a href=&#34;https://quera.org/media/public/quera_certificate/f8df1a6cae9941449b2d6c0f206ff8bb.jpg&#34; target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34; 
+         style=&#34;text-decoration: none; font-size: 0.9em;&#34;&gt;Data Structure and Algorithm&lt;/a&gt;
     &lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;
@@ -337,6 +346,14 @@
     &lt;div style=&#34;display: flex; flex-direction: column;&#34;&gt;
       &lt;a href=&#34;https://www.coursera.org/account/accomplishments/verify/BB5PV5BQUS68?utm_source=link&amp;utm_medium=certificate&amp;utm_content=cert_image&amp;utm_campaign=sharing_cta&amp;utm_product=course&#34; target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34; 
          style=&#34;text-decoration: none; font-size: 0.9em;&#34;&gt;Improving Deep Neural Networks&lt;/a&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+   &lt;div style=&#34;flex: 1; display: flex; align-items: center; gap: 15px;&#34;&gt;
+    &lt;img src=&#34;http://localhost:1313/coursera.png&#34; alt=&#34;DeepLearning.AI&#34; 
+         style=&#34;width: 40px; height: 40px; object-fit: contain;&#34; /&gt;
+    &lt;div style=&#34;display: flex; flex-direction: column;&#34;&gt;
+      &lt;a href=&#34;https://www.coursera.org/account/accomplishments/verify/4VJK5VNUJFKS?utm_source=link&amp;utm_medium=certificate&amp;utm_content=cert_image&amp;utm_campaign=sharing_cta&amp;utm_product=course&#34; target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34; 
+         style=&#34;text-decoration: none; font-size: 0.9em;&#34;&gt;Neural Networks and Deep Learning&lt;/a&gt;
     &lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;</description>
