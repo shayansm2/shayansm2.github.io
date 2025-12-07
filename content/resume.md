@@ -27,11 +27,10 @@ title = 'Resume'
   </div>
 </div>
 
-- Contributed to the Backup Service at Hamravesh Cloud (leading PaaS provider in Iran)–a microservice orchestrating automated, cross-zone backups across multiple Kubernetes clusters.
-- Developed the core billing and pricing system for backup service, generating monthly revenue of +300 million tomans.
-- Redesigned and migrated backup service pages using Django (API) and React (frontend), and led the transition from a monolith to microservices—including deployment, CI/CD, and database migration—enabling development team autonomy.
-- Analyzed and identified recurring operational tasks in the backup system, designed and implemented two automated workflows using Temporal—for snapshot migration and backup garbage collection—resulting in a ~40% reduction in operational workload and ~20% increase in backup storage capacity without added infrastructure costs.
-- Contributed to the Object Storage backend—a FastAPI, Pydantic, and SQLAlchemy-based microservice in Kubernetes—by integrating it with SeaweedFS for scalable, efficient storage and reduced resource usage
+- Redesigned the Backup Service by migrating it from a monolith to Django and React based microservices, including deployment, CI/CD, and database migration, improving reliability and enabling teams to deploy independently.
+- Developed the billing and pricing system for the Backup Service, enabling automated monthly billing for 400M tomans in usage.
+- Built long-running, fault-tolerant workflows in Temporal (snapshot migration, garbage collection), cutting manual ops work by ~40% and expanding storage capacity by ~20% without new infrastructure.
+- Integrated the FastAPI object-storage backend with SeaweedFS, enabling the use of cheaper HDDs while maintaining SSD-level performance, availability, and durability.
 
 <div class="custom-html" style="display: flex; align-items: center; justify-content: space-between; padding: 10px 0; font-family: Arial, sans-serif;">
   <div style="display: flex; align-items: center; gap: 15px;">
@@ -44,7 +43,6 @@ title = 'Resume'
          style="text-decoration: none; font-size: 0.9em;">Venue Wise</a>
       </div>
     </div>
-
   </div>
   <div style="text-align: right; white-space: nowrap; font-size: 0.9em;">
       May 2024 - Jul 2024 (3 mos)
@@ -52,8 +50,7 @@ title = 'Resume'
   </div>
 </div>
 
-- Integrated the existing system with Zoho CRM, streamlining customer relationship follow-ups and reducing manual data entry, improving sales team efficiency.
-- Implemented event-driven architecture in the Laravel-based project, reducing average request processing time and decoupling business logic, which accelerated feature development.
+- Implemented an event-driven architecture in Laravel and integrated it with Zoho CRM, reducing manual data entry and speeding up customer-management workflows.
 
 <div class="custom-html" style="display: flex; align-items: center; justify-content: space-between; padding: 10px 0; font-family: Arial, sans-serif;">
   <div style="display: flex; align-items: center; gap: 15px;">
@@ -74,10 +71,10 @@ title = 'Resume'
   </div>
 </div>
 
-- Drove the design, architecture, and implementation of a “Checkout as a Service” platform, enabling diverse sales options such as e-gift cards, fresh goods, cheque payments, and coupon usage, leading to a 13% increase in total sales.
-- Architected the centralized order management service using temporal durable workflows, enabling seamless integration of business partners into the core system.
-- Architected and developed the user subscriptions microservice, seamlessly migrating subscription logic from the legacy codebase to the new microservice architecture, resulting in faster development and deployment speeds.
-- Integrated the existing codebase with the GrowthBook platform for A/B testing and feature flagging, optimizing performance to handle high traffic volumes and eliminating GrowthBook as a bottleneck for user requests, enabling marketing and user research teams to run 4x more A/B tests.
+- Designed the centralized order-management service at Digikala (MENA’s largest e-commerce platform with 41.5M MAU) using durable Temporal workflows, enabling partner systems to integrate directly with the core platform.
+- Led the design and development of a Checkout-as-a-Service platform supporting e-gift cards, fresh goods, cheque payments, and coupon flows, contributing to a 13% increase in total sales.
+- Built the user-subscriptions microservice and migrated logic from the legacy system, reducing implementation time for new subscription features.
+- Integrated GrowthBook for A/B testing and feature flags, removing performance bottlenecks and enabling a 4× increase in marketing experiments.
 
 <div class="custom-html" style="display: flex; align-items: center; justify-content: space-between; padding: 10px 0; font-family: Arial, sans-serif;">
   <div style="display: flex; align-items: center; gap: 15px;">
@@ -98,30 +95,12 @@ title = 'Resume'
   </div>
 </div>
 
-- Designed, implemented, and launched the backend of a B2B sales site using a Symfony-based framework, enabling seamless sales transactions for companies. This initiative introduced a new B2B business line alongside the existing B2C model, contributing 5% to yearly total sales and expanding the customer base by 10% within the first year.
-- Developed a PHP Snowplow SDK to track user activities and transmit events to the big data team, improving data accuracy and providing actionable insights for big data and marketing teams to drive decision-making.
-- Built and deployed a new cashback system for Prime users, enhancing user loyalty and driving a 30% increase in repeat purchases among Prime members.
-- Developed a Python framework for generating reports and analytics from Jira data, leveraging Python data pipelines, PostgreSQL, and DBT. This automation streamlined Scrum Master tasks, reducing the team’s dependency on one full-time Scrum Master and improving operational efficiency.
-- Led a 6-person team, as a Bootcamp Instructor, through intensive software engineering instruction over 2 months, provided technical guidance and project oversight, resulting in hiring 4 bootcamp graduates.
-
-<!-- <div class="custom-html" style="display: flex; align-items: center; justify-content: space-between; padding: 10px 0; font-family: Arial, sans-serif;">
-  <div style="display: flex; align-items: center; gap: 15px;">
-    <img src="https://media.licdn.com/dms/image/v2/C4D0BAQGshHg22ds-ug/company-logo_100_100/company-logo_100_100/0/1652508506193/digikala_logo?e=1752710400&v=beta&t=E5-4IITE8O_B8whLN0NlZ5R9RJcs5h8ck4SpJWRE9-M" alt="Company Logo"
-         style="width: 40px; height: 40px; object-fit: contain;" />
-    <div style="display: flex; flex-direction: column;">
-      <div style="font-weight: bold; font-size: 1.1em;">Bootcamp Instructor</div>
-      <div>
-        <a href="https://www.digikala.com/" target="_blank" rel="noopener noreferrer"
-         style="text-decoration: none; font-size: 0.9em;">Digikala E-commerce</a>
-      </div>
-    </div>
-
-  </div>
-  <div style="text-align: right; white-space: nowrap; font-size: 0.9em;">
-      Jul 2022 - Sep 2022 (3 mos)
-      <div style="font-size: 0.85em;">Tehran - Iran . Part-time</div>
-  </div>
-</div> -->
+- Developed the backend for a Symfony-based B2B sales platform, contributing to 5% of annual sales and helping grow the customer base by 10% in the first year.
+- Created a PHP SDK for Snowplow to capture user-activity events and deliver reliable data for analytics and marketing.
+- Built and shipped a Prime cashback system, driving ~30% more repeat purchases and boosting retention.
+- Added typed resolver arguments to the company’s custom GraphQL framework, improving type safety and DevEx.
+- Built a Python reporting framework with PostgreSQL and DBT to automate Jira analytics, reducing manual reporting work and improving team efficiency.
+- Led a 6-person team as a Bootcamp instructor, guiding technical work and projects over two months, leading to four graduates being hired.
 
 <div class="custom-html" style="display: flex; align-items: center; justify-content: space-between; padding: 10px 0; font-family: Arial, sans-serif;">
   <div style="display: flex; align-items: center; gap: 15px;">
@@ -142,31 +121,7 @@ title = 'Resume'
   </div>
 </div>
 
-- Proposed a Profit Contribution (PC2) calculation model aimed at providing insights for optimizing operational costs and boosting revenue.
-- Developed a discount optimization model and its accompanying data pipeline utilizing Python, PowerBI, and SQL Server, resulting in providing enhanced recommendations to the business for setting optimal discounts, thereby increasing revenue.
-
-<!-- <div class="custom-html" style="display: flex; align-items: center; justify-content: space-between; padding: 10px 0; font-family: Arial, sans-serif;">
-  <div style="display: flex; align-items: center; gap: 15px;">
-    <img src="https://media.licdn.com/dms/image/v2/C560BAQFaRNyDG5O8Cg/company-logo_100_100/company-logo_100_100/0/1630625333751/bluebitsoft_logo?e=1752710400&v=beta&t=q2sva6ksAVz0mMULXkfSmr4TUYRX9sLIUEjzoxfWh5Y" alt="Company Logo"
-         style="width: 40px; height: 40px; object-fit: contain;" />
-    <div style="display: flex; flex-direction: column;">
-      <div style="font-weight: bold; font-size: 1.1em;">Business Intelligence Analyst</div>
-      <div>
-        <a href="https://bluebitsoft.codes/" target="_blank" rel="noopener noreferrer"
-         style="text-decoration: none; font-size: 0.9em;">BlueBitSoft</a>
-      </div>
-    </div>
-
-  </div>
-  <div style="text-align: right; white-space: nowrap; font-size: 0.9em;">
-      Jun 2020 - Sep 2020 (4 mos)
-      <div style="font-size: 0.85em;">Netherlands (Remote) . Part-time</div>
-  </div>
-</div>
-
-###
-
-- Developed and enhanced visualization dashboards in PowerBI to deliver actionable managerial insights. -->
+- Designed data/ML models and cost analyses to detect inefficiencies and cut operating costs.
 
 ---
 
