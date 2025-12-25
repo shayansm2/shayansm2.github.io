@@ -3,7 +3,7 @@ date = '2025-11-02T09:18:06+03:30'
 title = 'My Thoughts on LLMs and Building AI Products'
 showToC = true
 [cover]
-image = "https://github.com/shayansm2/askhn/raw/main/statics/schema.png"
+image = "/llm_zoomcamp.png"
 +++
 
 IIn the last few months, I’ve been working through a free, open-source course called [LLM Zoomcamp](https://github.com/DataTalksClub/llm-zoomcamp), which teaches how to build **Retrieval-Augmented Generation (RAG)** systems and follow best practices.
