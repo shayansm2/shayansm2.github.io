@@ -6,8 +6,15 @@
     <description>Recent content on Shayan Shafiee Moghadam</description>
     <generator>Hugo -- 0.147.0</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 02 Nov 2025 09:18:06 +0330</lastBuildDate>
+    <lastBuildDate>Thu, 05 Feb 2026 12:11:08 +0330</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Syncing Your Local-First Notes With Rclone</title>
+      <link>http://localhost:1313/posts/rclone/</link>
+      <pubDate>Thu, 05 Feb 2026 12:11:08 +0330</pubDate>
+      <guid>http://localhost:1313/posts/rclone/</guid>
+      <description>&lt;p&gt;I love working with Obsidian and Logseq. I use Obsidian mostly for note-taking and writing long-lived documents, and I enjoy its cool features like Canvas and additional plugins like Excalidraw, which is my favorite. I also use Logseq for task management and writing short-lived logs. One of their great benefits is that your files are stored locally, unlike Notion—which is actually why I switched from Notion to Obsidian. The only downside is that if you want to use both a desktop and a mobile client for Obsidian or Logseq, there’s no free built-in sync solution; you have to purchase their official sync service.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>My Thoughts on LLMs and Building AI Products</title>
       <link>http://localhost:1313/posts/llm-askhn/</link>

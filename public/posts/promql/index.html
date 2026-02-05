@@ -5,12 +5,11 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="noindex, nofollow">
-<title>Dagger CI | Shayan Shafiee Moghadam</title>
+<title>Promql | Shayan Shafiee Moghadam</title>
 <meta name="keywords" content="">
-<meta name="description" content="I was recently introduced to dagger.io by my tech lead. Dagger is a CI tool created by Solomon Hykes, who is also the founder of Docker. I listened to his interview on the kubernetes podcast and several aspects about the motivation behind Dagger caught my attention.
-The most interesting aspect of Dagger is its objective to provide a separation of concerns. These days, the CI code and configuration you write are often tightly coupled with the specific technology or infrastructure you are using. For example, gitlab-ci.yaml files are tailored for GitLab runners, and GitHub Actions has its own unique file format. Dagger aims to unify CI pipeline configurations and code, making them executable anywhere—similar to Docker.">
+<meta name="description" content="Promql - Shayan Shafiee Moghadam">
 <meta name="author" content="">
-<link rel="canonical" href="http://localhost:1313/posts/dagger/">
+<link rel="canonical" href="http://localhost:1313/posts/promql/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.f49d66caae9ea0fd43f21f29e71a8d3e284517ed770f2aa86fa012953ad3c9ef.css" integrity="sha256-9J1myq6eoP1D8h8p5xqNPihFF&#43;13Dyqob6ASlTrTye8=" rel="preload stylesheet" as="style">
 <link rel="icon" href="http://localhost:1313/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
@@ -19,7 +18,7 @@ The most interesting aspect of Dagger is its objective to provide a separation o
 <link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/dagger/">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/promql/">
 <noscript>
     <style>
         #theme-toggle,
@@ -123,20 +122,13 @@ The most interesting aspect of Dagger is its objective to provide a separation o
   <header class="post-header">
     
     <h1 class="post-title entry-hint-parent">
-      Dagger CI
+      Promql
     </h1>
-    <div class="post-meta"><span title='2024-10-22 09:18:06 +0330 +0330'>October 22, 2024</span>
+    <div class="post-meta"><span title='2026-01-02 18:28:57 +0330 +0330'>January 2, 2026</span>
 
 </div>
   </header> 
-  <div class="post-content"><p>I was recently introduced to <a href="https://dagger.io/">dagger.io</a> by my tech lead. Dagger is a CI tool created by Solomon Hykes, who is also the founder of Docker. I listened to his interview on the <a href="https://kubernetespodcast.com/episode/236-dagger/">kubernetes podcast</a> and several aspects about the motivation behind Dagger caught my attention.</p>
-<p>The most interesting aspect of Dagger is its objective to provide a separation of concerns. These days, the CI code and configuration you write are often tightly coupled with the specific technology or infrastructure you are using. For example, gitlab-ci.yaml files are tailored for GitLab runners, and GitHub Actions has its own unique file format. Dagger aims to unify CI pipeline configurations and code, making them executable anywhere—similar to Docker.</p>
-<p>Another compelling feature of Dagger is its ability to execute CI pipelines anywhere, even locally. This can significantly reduce the feedback loop time for development teams when fixing and maintaining their code. The Dagger engine ensures the CI pipeline runs consistently on any machine.</p>
-<p>Lastly, what I found particularly interesting is that Dagger&rsquo;s team believes CI pipelines should be written in code, not in JSON or YAML files. As Solomon pointed out, the complexity of CI pipelines is often better expressed through code rather than YAML. They have developed SDKs in Python, Golang, and TypeScript, with plans to expand to other languages like Java and PHP. These SDKs are declarative and communicate with the Dagger engine through GraphQL APIs to define the desired pipeline.</p>
-<p>In addition to the podcast, you can watch this <a href="https://www.youtube.com/watch?v=S_Z4AHZlSUI">youtube</a> from KubeCon for more insights into Dagger.</p>
 
-
-  </div>
 
   <footer class="post-footer">
     <ul class="post-tags">

@@ -37,7 +37,7 @@ params:
     - name: linkedin
       url: "https://www.linkedin.com/in/shayan-shafiee-moghadam/"
     - name: substack
-      url: "https://substack.com/@shayansm"
+      url: "https://shayansm.substack.com/"
     - name: mastodon
       url: "https://mastodon.social/@shayansm"
     - name: email
