@@ -9,11 +9,12 @@
     <lastBuildDate>Thu, 05 Feb 2026 12:11:08 +0330</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Syncing Your Local-First Notes With Rclone</title>
+      <title>A Simple Local-First Syncing Solution for Personal Notes</title>
       <link>http://localhost:1313/posts/rclone/</link>
       <pubDate>Thu, 05 Feb 2026 12:11:08 +0330</pubDate>
       <guid>http://localhost:1313/posts/rclone/</guid>
-      <description>&lt;p&gt;I love working with Obsidian and Logseq. I use Obsidian mostly for note-taking and writing long-lived documents, and I enjoy its cool features like Canvas and additional plugins like Excalidraw, which is my favorite. I also use Logseq for task management and writing short-lived logs. One of their great benefits is that your files are stored locally, unlike Notion—which is actually why I switched from Notion to Obsidian. The only downside is that if you want to use both a desktop and a mobile client for Obsidian or Logseq, there’s no free built-in sync solution; you have to purchase their official sync service.&lt;/p&gt;</description>
+      <description>&lt;p&gt;I love working with Obsidian and Logseq. I use Obsidian mostly for note-taking and writing long-lived documents, and I enjoy its features like Canvas and additional plugins such as Excalidraw, which is my favorite. I also use Logseq for task management and writing short-lived logs.&lt;/p&gt;
+&lt;p&gt;One of their great benefits is that your files are stored locally, unlike Notion, which is actually why I switched from Notion to Obsidian in the first place. The only downside is that if you want to use Obsidian or Logseq on both a desktop and a mobile device, there isn’t a free built-in sync solution; you have to purchase their official sync service.&lt;/p&gt;</description>
     </item>
     <item>
       <title>My Thoughts on LLMs and Building AI Products</title>
@@ -79,10 +80,14 @@
   &lt;/div&gt;
 &lt;/div&gt;
 &lt;ul&gt;
-&lt;li&gt;Redesigned the Backup Service by migrating it from a monolith to Django and React based microservices, including deployment, CI/CD, and database migration, improving reliability and enabling teams to deploy independently.&lt;/li&gt;
-&lt;li&gt;Developed the billing and pricing system for the Backup Service, enabling automated monthly billing for 400M tomans in usage.&lt;/li&gt;
-&lt;li&gt;Built long-running, fault-tolerant workflows in Temporal (snapshot migration, garbage collection), cutting manual ops work by ~40% and expanding storage capacity by ~20% without new infrastructure.&lt;/li&gt;
-&lt;li&gt;Integrated the FastAPI object-storage backend with SeaweedFS, enabling the use of cheaper HDDs while maintaining SSD-level performance, availability, and durability.&lt;/li&gt;
+&lt;li&gt;Developed integration tests in Go for SeaweedFS S3 APIs based on AWS S3 compatibility documentation, identified and fixed invariant behavior issues.&lt;/li&gt;
+&lt;li&gt;Integrated a FastAPI object storage backend with SeaweedFS, enabling cost-effective HDD-based storage while maintaining performance and durability.&lt;/li&gt;
+&lt;li&gt;Developed the billing and pricing system for the Backup Service in Django with unit test coverage, enabling automated monthly billing for +500M tomans in usage.&lt;/li&gt;
+&lt;li&gt;Redesigned the Backup Service frontend using React, improving user experience and enabling reuse across services using microfrontend architecture.&lt;/li&gt;
+&lt;li&gt;Migrated the Backup Service from a monolithic architecture to Django-based microservices, enabling independent service deployments and improving system reliability.&lt;/li&gt;
+&lt;li&gt;Built CI/CD pipelines for object storage and backup services using GitLabCI and ArgoCD.&lt;/li&gt;
+&lt;li&gt;Rewrote Temporal workflows for Kubernetes PVC synchronization and PVC migration to improve reliability and reduce the risk of data loss during storage operations.&lt;/li&gt;
+&lt;li&gt;Developed snapshot migration and garbage collection workflows in Temporal, reducing manual operational work by ~40% and increasing storage utilization by ~20% without additional infrastructure.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div class=&#34;custom-html&#34; style=&#34;display: flex; align-items: center; justify-content: space-between; padding: 10px 0; font-family: Arial, sans-serif;&#34;&gt;
   &lt;div style=&#34;display: flex; align-items: center; gap: 15px;&#34;&gt;

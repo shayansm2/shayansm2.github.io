@@ -5,9 +5,10 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="noindex, nofollow">
-<title>Syncing Your Local-First Notes With Rclone | Shayan Shafiee Moghadam</title>
+<title>A Simple Local-First Syncing Solution for Personal Notes | Shayan Shafiee Moghadam</title>
 <meta name="keywords" content="">
-<meta name="description" content="I love working with Obsidian and Logseq. I use Obsidian mostly for note-taking and writing long-lived documents, and I enjoy its cool features like Canvas and additional plugins like Excalidraw, which is my favorite. I also use Logseq for task management and writing short-lived logs. One of their great benefits is that your files are stored locally, unlike Notion—which is actually why I switched from Notion to Obsidian. The only downside is that if you want to use both a desktop and a mobile client for Obsidian or Logseq, there’s no free built-in sync solution; you have to purchase their official sync service.">
+<meta name="description" content="I love working with Obsidian and Logseq. I use Obsidian mostly for note-taking and writing long-lived documents, and I enjoy its features like Canvas and additional plugins such as Excalidraw, which is my favorite. I also use Logseq for task management and writing short-lived logs.
+One of their great benefits is that your files are stored locally, unlike Notion, which is actually why I switched from Notion to Obsidian in the first place. The only downside is that if you want to use Obsidian or Logseq on both a desktop and a mobile device, there isn’t a free built-in sync solution; you have to purchase their official sync service.">
 <meta name="author" content="">
 <link rel="canonical" href="http://localhost:1313/posts/rclone/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.f49d66caae9ea0fd43f21f29e71a8d3e284517ed770f2aa86fa012953ad3c9ef.css" integrity="sha256-9J1myq6eoP1D8h8p5xqNPihFF&#43;13Dyqob6ASlTrTye8=" rel="preload stylesheet" as="style">
@@ -122,20 +123,60 @@
   <header class="post-header">
     
     <h1 class="post-title entry-hint-parent">
-      Syncing Your Local-First Notes With Rclone
+      A Simple Local-First Syncing Solution for Personal Notes
     </h1>
     <div class="post-meta"><span title='2026-02-05 12:11:08 +0330 +0330'>February 5, 2026</span>
 
 </div>
   </header> 
-  <div class="post-content"><p>I love working with Obsidian and Logseq. I use Obsidian mostly for note-taking and writing long-lived documents, and I enjoy its cool features like Canvas and additional plugins like Excalidraw, which is my favorite. I also use Logseq for task management and writing short-lived logs. One of their great benefits is that your files are stored locally, unlike Notion—which is actually why I switched from Notion to Obsidian. The only downside is that if you want to use both a desktop and a mobile client for Obsidian or Logseq, there’s no free built-in sync solution; you have to purchase their official sync service.</p>
-<p>Of course, there are dozens of free and open-source sync plugins available, but each one typically depends on a specific cloud storage provider. At first, I tried syncing my changes via Git to my GitHub account, which had the advantage of adding version control to my documents. The drawback, however, was that I had to keep the repository private and avoid storing confidential information in my Obsidian vault as much as possible.</p>
-<p>Another cool solution I tried is using rclone. It can sync your data with various sources, such as S3-compatible solutions or cloud storage like Dropbox, Google Drive, Microsoft OneDrive, and many more. All you need to do is install rclone, set up your desired remote using rclone config, and then sync your Obsidian vault easily with this command:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>rclone sync /path/to/obsidian/vault your-remote:/path/to/store -v
-</span></span></code></pre></div><p>I personally created an alias on my desktop so I can sync my notes quickly and then access them via my Google Drive app.</p>
-<p>On my phone, I use an app called Roundsync, which is based on rclone. This lets me sync changes from the remote to my phone and vice versa. If I make changes on my phone and sync them to the remote, I can then pull them back to my desktop using rclone sync remote local.</p>
-<p>You can even set up cron jobs to periodically sync your changes to the remote so your notes stay updated without manual effort. One thing to keep in mind: it’s a good idea to keep a backup of your notes somewhere else—like on GitHub or a dedicated S3 bucket—since syncing from two sources can sometimes lead to data loss.</p>
-<p>Thanks for reading! I’d appreciate your comments on how you handle syncing your notes.</p>
+  <div class="post-content"><p>I love working with Obsidian and Logseq. I use Obsidian mostly for note-taking and writing long-lived documents, and I enjoy its features like Canvas and additional plugins such as Excalidraw, which is my favorite. I also use Logseq for task management and writing short-lived logs.</p>
+<p>One of their great benefits is that your files are stored locally, unlike Notion, which is actually why I switched from Notion to Obsidian in the first place. The only downside is that if you want to use Obsidian or Logseq on both a desktop and a mobile device, there isn’t a free built-in sync solution; you have to purchase their official sync service.</p>
+<p>Of course, there are dozens of free and open-source sync plugins available, but each one typically depends on a specific cloud storage provider. So here is how I implemented a simple local-first solution for syncing my notes between my desktop and phone.</p>
+<p>For this setup, I configured a remote that both my desktop and phone sync with. In this setup the contents of my Obsidian vault exist in three places: desktop, phone, and remote. The remote can be various storage providers, such as S3-compatible storage or cloud services like Dropbox, Google Drive, Microsoft OneDrive, and many others.</p>
+<p>On my desktop I use <code>git</code> and <code>rclone</code>.</p>
+<p>First, I initialize my Obsidian vault as a Git repository. The main reason is to check whether there have been changes locally before syncing with the remote. Technically, it could have been simpler to use a tool for generating checksums like sha256sum, but I chose Git because it also gives me version control for my notes.</p>
+<p>Second, all I needed to do was install <code>rclone</code> and set up my desired remote using <code>rclone config</code>.</p>
+<p>Finally, I added the following scripts for pushing and pulling changes from the remote, and for syncing automatically with a cron job.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>obsidian_push<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    rclone sync /path/to/obsidian/notes remote:/obsidian-bucket -v <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>        --exclude <span style="color:#e6db74">&#34;.git/**&#34;</span> --exclude <span style="color:#e6db74">&#34;.obsidian/**&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>obsidian_pull<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    rclone sync remote:/obsidian-bucket /path/to/obsidian/notes -v <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>        --exclude <span style="color:#e6db74">&#34;.git/**&#34;</span> --exclude <span style="color:#e6db74">&#34;.obsidian/**&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>obsidian_sync<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    echo <span style="color:#e6db74">&#34;running obsidian sync&#34;</span>
+</span></span><span style="display:flex;"><span>    cd /path/to/obsidian/notes <span style="color:#f92672">||</span> <span style="color:#66d9ef">return</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>git status -s | grep -v <span style="color:#e6db74">&#34;.obsidian&#34;</span> | wc -l<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span> -ne <span style="color:#ae81ff">0</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>        echo <span style="color:#e6db74">&#34;push changes&#34;</span>
+</span></span><span style="display:flex;"><span>        obsidian_push
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> $? -ne <span style="color:#ae81ff">0</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        git add .
+</span></span><span style="display:flex;"><span>        git commit -m <span style="color:#e6db74">&#34;update changes&#34;</span> &gt; /dev/null
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span>
+</span></span><span style="display:flex;"><span>        echo <span style="color:#e6db74">&#34;pull changes&#34;</span>
+</span></span><span style="display:flex;"><span>        obsidian_pull
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><p>I also added a cron job to run <code>obsidian_sync</code> every hour.</p>
+<pre tabindex="0"><code>0 * * * * obsidian-sync &gt;&gt; /tmp/cron.log 2&gt;&amp;1
+</code></pre><p>On my phone, I use an app called <a href="https://roundsync.com/">Roundsync</a>, which is based on rclone. This lets me sync changes from the remote to my phone and vice versa. If I make changes on my phone and sync them to the remote, I can then pull them back to my desktop using <code>rclone sync remote local</code>.</p>
+<p>Roundsync also has a feature called Triggers, which are similar to cron jobs. In my setup, I pull changes every hour, but I push my changes manually.</p>
+<p>So the final setup looks like this:</p>
+<ul>
+<li>On the desktop, everything happens automatically.</li>
+<li>On the phone, pulling happens periodically but pushing is manual.</li>
+</ul>
+<p>One thing to keep in mind: it’s a good idea to keep a backup of your notes somewhere else—like on GitHub or a dedicated S3 bucket—since syncing from multiple sources can sometimes lead to data loss.</p>
+<p>Thanks for reading! I’d appreciate hearing how others handle syncing their notes.</p>
 
 
   </div>
