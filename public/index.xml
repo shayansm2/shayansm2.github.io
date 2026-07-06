@@ -6,8 +6,122 @@
     <description>Recent content on Shayan Shafiee Moghadam</description>
     <generator>Hugo -- 0.147.0</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 05 Feb 2026 12:11:08 +0330</lastBuildDate>
+    <lastBuildDate>Mon, 06 Jul 2026 10:11:18 +0330</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Building 3ync: A Local-First, S3-Compatible Sync Engine</title>
+      <link>http://localhost:1313/posts/3ync/</link>
+      <pubDate>Mon, 06 Jul 2026 10:11:18 +0330</pubDate>
+      <guid>http://localhost:1313/posts/3ync/</guid>
+      <description>&lt;h2 id=&#34;the-problem-and-old-solutions&#34;&gt;The Problem and Old Solutions&lt;/h2&gt;
+&lt;p&gt;I previously came up with a simple local-first solution to sync my Obsidian files between my desktop and phone, which I wrote about in this &lt;a href=&#34;https://shayansm.substack.com/p/syncing-your-local-first-notes-with&#34;&gt;blog&lt;/a&gt;. The way it worked was like this:&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;previous design&#34; loading=&#34;lazy&#34; src=&#34;https://substackcdn.com/image/fetch/$s_!4lAD!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ffd4c556e-f92e-4928-8b50-fefc9e75a129_908x646.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;The local storage on my devices (desktop or mobile) was periodically syncing files with the cloud. This cloud storage could be any object storage, or out-of-the-box solutions like Google Drive, Dropbox, etc.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Curriculum Vitae</title>
+      <link>http://localhost:1313/cv/</link>
+      <pubDate>Fri, 26 Jun 2026 18:21:58 +0330</pubDate>
+      <guid>http://localhost:1313/cv/</guid>
+      <description>&lt;h1 id=&#34;education&#34;&gt;Education&lt;/h1&gt;
+&lt;h3 id=&#34;master-of-science-industrial-engineering-systems-optimization-at-university-of-tehran&#34;&gt;Master of Science, Industrial Engineering (Systems Optimization) at &lt;strong&gt;University of Tehran&lt;/strong&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;Sep 2019-Jun 2022&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;CGPA: 4/4&lt;/strong&gt; &lt;em&gt;(19.21/20)&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Thesis&lt;/strong&gt;: Solving a dynamic location-routing-inventory problem for a supply chain of fast-moving consumer goods by a data-driven optimization approach&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Notable Courses&lt;/strong&gt;:
+&lt;ul&gt;
+&lt;li&gt;Fuzzy Set Theory (20/20)&lt;/li&gt;
+&lt;li&gt;Meta-Heuristic Algorithms (19.25/20)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;bachelor-of-science-industrial-engineering-at-university-of-tehran&#34;&gt;Bachelor of Science, Industrial Engineering at &lt;strong&gt;University of Tehran&lt;/strong&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;Sep 2015-Jun 2019&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;CGPA: 3.96/4&lt;/strong&gt; &lt;em&gt;(19/20)&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Thesis&lt;/strong&gt;: A hybrid NSGA-II algorithm for solving organ transplant routing-allocation problem in healthcare supply chain network&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Notable Courses&lt;/strong&gt;:
+&lt;ul&gt;
+&lt;li&gt;Artificial Intelligence (20/20)&lt;/li&gt;
+&lt;li&gt;Computer Programming (19.8/20)&lt;/li&gt;
+&lt;li&gt;Probability Theory (20/20)&lt;/li&gt;
+&lt;li&gt;Engineering Statistics (20/20)&lt;/li&gt;
+&lt;li&gt;Operations Research (19.5/20)&lt;/li&gt;
+&lt;li&gt;Management Information Systems (20/20)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;work-experience&#34;&gt;Work experience&lt;/h1&gt;
+&lt;h3 id=&#34;software-engineer-at-hamravesh-cloud&#34;&gt;Software Engineer at Hamravesh Cloud&lt;/h3&gt;
+&lt;h5 id=&#34;aug-2024---present&#34;&gt;Aug 2024 - Present&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;Developed the core billing and pricing system for a backup service, leveraging Django for API implementation and React for frontend redesign, driving a monthly revenue of 300 million tomans.&lt;/li&gt;
+&lt;li&gt;Designed and implemented two backup workflows using Temporal for snapshot migration and garbage collection, increasing backup capacity by 20% without additional resource costs.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;senior-software-engineer-at-digikalacom&#34;&gt;Senior Software Engineer at Digikala.com&lt;/h3&gt;
+&lt;h5 id=&#34;oct-2022---jul-2024&#34;&gt;Oct 2022 - Jul 2024&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;Drove the design, architecture, and implementation of a &amp;ldquo;Checkout as a Service&amp;rdquo; platform, enabling diverse sales options such as e-gift cards, fresh goods, cheque payments, and coupon usage, leading to a 13% increase in total sales.&lt;/li&gt;
+&lt;li&gt;Architected the centralized order management service using temporal durable workflows, enabling seamless integration of business partners into the core system.&lt;/li&gt;
+&lt;li&gt;Architected and developed the user subscriptions microservice, seamlessly migrating subscription logic from the legacy codebase to the new microservice architecture, resulting in faster development and deployment speeds.&lt;/li&gt;
+&lt;li&gt;Integrated the existing codebase with the GrowthBook platform for A/B testing and feature flagging, optimizing performance to handle high traffic volumes and eliminating GrowthBook as a bottleneck for user requests, enabling marketing and user research teams to run 4x more A/B tests.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;software-engineer-at-digikalacom&#34;&gt;Software Engineer at Digikala.com&lt;/h3&gt;
+&lt;h5 id=&#34;apr-2021---oct-2022&#34;&gt;Apr 2021 - Oct 2022&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;Designed, implemented, and launched the backend of a B2B sales site using a Symfony-based framework, enabling seamless sales transactions for companies. This initiative introduced a new B2B business line alongside the existing B2C model, contributing 5% to yearly total sales and expanding the customer base by 10% within the first year.&lt;/li&gt;
+&lt;li&gt;Developed a PHP Snowplow SDK to track user activities and transmit events to the big data team, improving data accuracy and providing actionable insights for big data and marketing teams to drive decision-making.&lt;/li&gt;
+&lt;li&gt;Built and deployed a new cashback system for Prime users, enhancing user loyalty and driving a 30% increase in repeat purchases among Prime members.&lt;/li&gt;
+&lt;li&gt;Developed a Python framework for generating reports and analytics from Jira data, leveraging Python data pipelines, PostgreSQL, and DBT. This automation streamlined Scrum Master tasks, reducing the team’s dependency on one full-time Scrum Master and improving operational efficiency.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;data-analyst-at-digikala&#34;&gt;Data Analyst at Digikala&lt;/h3&gt;
+&lt;h5 id=&#34;jul-2019---apr-2021&#34;&gt;Jul 2019 - Apr 2021&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;Proposed a Profit Contribution (PC2) calculation model aimed at providing insights for optimizing operational costs and boosting revenue.&lt;/li&gt;
+&lt;li&gt;Developed a discount optimization model and its accompanying data pipeline utilizing Python, PowerBI, and SQL Server, resulting in providing enhanced recommendations to the business for setting optimal discounts, thereby increasing revenue.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;business-intelligence-analyst-at-bluebitsoft&#34;&gt;Business Intelligence Analyst at BlueBitSoft&lt;/h3&gt;
+&lt;h5 id=&#34;jun-2020---sep-2020&#34;&gt;Jun 2020 - Sep 2020&lt;/h5&gt;
+&lt;h6 id=&#34;part-time-remote&#34;&gt;Part-time, Remote&lt;/h6&gt;
+&lt;ul&gt;
+&lt;li&gt;Developed and enhanced visualization dashboards in PowerBI to deliver actionable managerial insights.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;teaching--research-experience&#34;&gt;Teaching &amp;amp; Research Experience&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Teaching Assistant&lt;/strong&gt; of &lt;em&gt;Scheduling Theory&lt;/em&gt; course at University of Tehran &lt;em&gt;(Sep 2020-Jan 2021)&lt;/em&gt;
+&lt;ul&gt;
+&lt;li&gt;Prepared lectures and teaching materials for the graduate students’ class.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Teaching Assistant&lt;/strong&gt; of &lt;em&gt;Probability Theory&lt;/em&gt; course at University of Tehran &lt;em&gt;(Sep 2018-Jan 2019)&lt;/em&gt;
+&lt;ul&gt;
+&lt;li&gt;Conducted weekly tutorials for classes of undergraduate students.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Member of Industrial Engineering Scientific Association&lt;/strong&gt; (UTIESA) at University of Tehran &lt;em&gt;(Oct 2016–Aug 2018)&lt;/em&gt;
+&lt;ul&gt;
+&lt;li&gt;Responsible for arranging visits from industrial units and organizing additional workshops and training courses&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Teaching Assistant&lt;/strong&gt; of &lt;em&gt;Microeconomics&lt;/em&gt; course at University of Tehran &lt;em&gt;(Sep 2017-Jan 2018)&lt;/em&gt;
+&lt;ul&gt;
+&lt;li&gt;Guiding students in their projects, evaluating and grading projects.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Teaching Assistant&lt;/strong&gt; of &lt;em&gt;Computer Programming in C++&lt;/em&gt; course at University of Tehran &lt;em&gt;(Sep 2016-Jan 2017)&lt;/em&gt;
+&lt;ul&gt;
+&lt;li&gt;Tutored undergraduate students and graded assignments and quizzes.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;publications&#34;&gt;Publications&lt;/h1&gt;
+  &lt;ul&gt;{% for post in site.publications reversed %}
+    {% include archive-single-cv.html %}
+  {% endfor %}&lt;/ul&gt;
+&lt;h1 id=&#34;skills&#34;&gt;Skills&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;Programming Languages&lt;/strong&gt;: | Python | PHP | Golang | SQL | Javascript | Java&lt;/p&gt;</description>
+    </item>
     <item>
       <title>A Simple Local-First Syncing Solution for Personal Notes</title>
       <link>http://localhost:1313/posts/rclone/</link>

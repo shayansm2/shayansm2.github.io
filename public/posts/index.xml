@@ -6,8 +6,18 @@
     <description>Recent content in Posts on Shayan Shafiee Moghadam</description>
     <generator>Hugo -- 0.147.0</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 05 Feb 2026 12:11:08 +0330</lastBuildDate>
+    <lastBuildDate>Mon, 06 Jul 2026 10:11:18 +0330</lastBuildDate>
     <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Building 3ync: A Local-First, S3-Compatible Sync Engine</title>
+      <link>http://localhost:1313/posts/3ync/</link>
+      <pubDate>Mon, 06 Jul 2026 10:11:18 +0330</pubDate>
+      <guid>http://localhost:1313/posts/3ync/</guid>
+      <description>&lt;h2 id=&#34;the-problem-and-old-solutions&#34;&gt;The Problem and Old Solutions&lt;/h2&gt;
+&lt;p&gt;I previously came up with a simple local-first solution to sync my Obsidian files between my desktop and phone, which I wrote about in this &lt;a href=&#34;https://shayansm.substack.com/p/syncing-your-local-first-notes-with&#34;&gt;blog&lt;/a&gt;. The way it worked was like this:&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;previous design&#34; loading=&#34;lazy&#34; src=&#34;https://substackcdn.com/image/fetch/$s_!4lAD!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ffd4c556e-f92e-4928-8b50-fefc9e75a129_908x646.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;The local storage on my devices (desktop or mobile) was periodically syncing files with the cloud. This cloud storage could be any object storage, or out-of-the-box solutions like Google Drive, Dropbox, etc.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>A Simple Local-First Syncing Solution for Personal Notes</title>
       <link>http://localhost:1313/posts/rclone/</link>

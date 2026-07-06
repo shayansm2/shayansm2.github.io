@@ -2,13 +2,19 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/posts/rclone/</loc>
-    <lastmod>2026-02-05T12:11:08+03:30</lastmod>
+    <loc>http://localhost:1313/posts/3ync/</loc>
+    <lastmod>2026-07-06T10:11:18+03:30</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/</loc>
-    <lastmod>2026-02-05T12:11:08+03:30</lastmod>
+    <lastmod>2026-07-06T10:11:18+03:30</lastmod>
   </url><url>
     <loc>http://localhost:1313/</loc>
+    <lastmod>2026-07-06T10:11:18+03:30</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/cv/</loc>
+    <lastmod>2026-06-26T18:21:58+03:30</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/rclone/</loc>
     <lastmod>2026-02-05T12:11:08+03:30</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/llm-askhn/</loc>

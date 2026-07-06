@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>Building 3ync: A Local-First, S3-Compatible Sync Engine | Shayan Shafiee Moghadam</title>
+<meta name="keywords" content="">
+<meta name="description" content="The Problem and Old Solutions
+I previously came up with a simple local-first solution to sync my Obsidian files between my desktop and phone, which I wrote about in this blog. The way it worked was like this:
+
+The local storage on my devices (desktop or mobile) was periodically syncing files with the cloud. This cloud storage could be any object storage, or out-of-the-box solutions like Google Drive, Dropbox, etc.">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:1313/posts/3ync/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.f49d66caae9ea0fd43f21f29e71a8d3e284517ed770f2aa86fa012953ad3c9ef.css" integrity="sha256-9J1myq6eoP1D8h8p5xqNPihFF&#43;13Dyqob6ASlTrTye8=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/3ync/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="Shayan Shafiee Moghadam (Alt + H)">Shayan Shafiee Moghadam</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/resume/" title="Resume">
+                    <span>Resume</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/posts/" title="Posts">
+                    <span>Posts</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/projects/" title="Side-Projects">
+                    <span>Side-Projects</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      Building 3ync: A Local-First, S3-Compatible Sync Engine
+    </h1>
+    <div class="post-meta"><span title='2026-07-06 10:11:18 +0330 +0330'>July 6, 2026</span>
+
+</div>
+  </header> 
+<figure class="entry-cover">
+        <img loading="eager" src="https://substackcdn.com/image/fetch/$s_!QqFj!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F93d8ebbd-4064-4f40-8b5d-07e449a7487a_1392x738.png" alt="">
+        
+</figure><div class="toc">
+    <details  open>
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#the-problem-and-old-solutions" aria-label="The Problem and Old Solutions">The Problem and Old Solutions</a></li>
+                <li>
+                    <a href="#the-theory-local-first-as-a-distributed-system" aria-label="The Theory: Local-First as a Distributed System">The Theory: Local-First as a Distributed System</a></li>
+                <li>
+                    <a href="#the-3ync-engine-concept-and-architecture" aria-label="The 3ync Engine Concept and Architecture">The 3ync Engine Concept and Architecture</a></li>
+                <li>
+                    <a href="#how-lww-interacts-with-s3-metadata" aria-label="How LWW Interacts with S3 Metadata">How LWW Interacts with S3 Metadata</a></li>
+                <li>
+                    <a href="#current-limitations-and-future-improvements" aria-label="Current Limitations and Future Improvements">Current Limitations and Future Improvements</a></li>
+                <li>
+                    <a href="#references" aria-label="References">References</a>
+                </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h2 id="the-problem-and-old-solutions">The Problem and Old Solutions<a hidden class="anchor" aria-hidden="true" href="#the-problem-and-old-solutions">#</a></h2>
+<p>I previously came up with a simple local-first solution to sync my Obsidian files between my desktop and phone, which I wrote about in this <a href="https://shayansm.substack.com/p/syncing-your-local-first-notes-with">blog</a>. The way it worked was like this:</p>
+<p><img alt="previous design" loading="lazy" src="https://substackcdn.com/image/fetch/$s_!4lAD!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ffd4c556e-f92e-4928-8b50-fefc9e75a129_908x646.png"></p>
+<p>The local storage on my devices (desktop or mobile) was periodically syncing files with the cloud. This cloud storage could be any object storage, or out-of-the-box solutions like Google Drive, Dropbox, etc.</p>
+<p>However, it had a major flaw: the syncing method was simple, but fragile. Imagine a scenario where the latest version on the cloud is <code>v1</code>. Both mobile and desktop change the contents simultaneously offline, bumping their local states to <code>v2</code> and <code>v3</code>. In this case, standard syncing causes data loss depending on the order of the sync schedules. If the desktop syncs first, <code>v2</code> gets overwritten and lost when the mobile syncs <code>v3</code>.</p>
+<p>One way to mitigate this is simply to decrease the sync interval. Faster syncs reduce the window of time where two devices can diverge from the remote server&rsquo;s main version. (Keep in mind, these personal notes have only one user, and I can only use one device at a time. If we were building real-time multi-user collaboration, that is a completely different story).
+The other, much safer way to achieve this is to implement a robust sync engine that intelligently determines what to keep and what to overwrite. That is why I wrote 3ync, an S3-compatible sync engine. But before explaining how it works under the hood, let’s explore the literature and context of the problem through the lens of my favorite book, <em>Designing Data-Intensive Applications</em>.</p>
+<p><img alt="DDIA" loading="lazy" src="https://substackcdn.com/image/fetch/$s_!7wty!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fbece2111-5efe-4c1b-abfa-0f6b95929bd3_500x660.png"></p>
+<h2 id="the-theory-local-first-as-a-distributed-system">The Theory: Local-First as a Distributed System<a hidden class="anchor" aria-hidden="true" href="#the-theory-local-first-as-a-distributed-system">#</a></h2>
+<p><em>Note: The concepts below are largely heavily inspired by Chapter 6 (Replication) of DDIA. If you haven&rsquo;t read it, I highly encourage you to check it out—it&rsquo;s an amazing read. You can also check out my other blog on <a href="https://shayansm.substack.com/p/database-index-internals">database index internals</a>, which covers Chapter 4 of the same book.</em></p>
+<p>Replication is a foundational concept in designing stateful distributed systems. It enables higher availability, performance, and fault tolerance. The three common replication architectures are:</p>
+<ol>
+<li><strong>Single-Leader Replication:</strong> The most commonly used approach. If a database needs to handle high read loads or be fault-tolerant via failover mechanisms, this is the simplest and standard solution.</li>
+<li><strong>Multi-Leader Replication:</strong> Often used for replication across massive geographic regions, or—importantly for us—<strong>local-first replication</strong>.</li>
+<li><strong>Leaderless Replication:</strong> Nodes accept writes directly without a designated leader</li>
+</ol>
+<p>In our Obsidian setup, each local database (the local file system on the phone or desktop) acts as a &ldquo;leader&rdquo; because it actively accepts write requests from the user offline. The flow of syncing these changes from one local device to a remote server (and indirectly to other local devices) is fundamentally a replication process.</p>
+<p>Because we have multiple local DBs (leaders) syncing (replicating) their data with one another, the local-first sync problem officially maps to <strong>multi-leader replication</strong>. <strong>Sync engines</strong> are the crucial piece of software that handles this multi-leader replication in the background, allowing the user to seamlessly read and write data in the foreground without waiting for network latency.</p>
+<p>One of the biggest hurdles multi-leader replication must address is <strong>conflict resolution</strong>. How do leaders agree when they both edit the same file? Here are the common strategies:</p>
+<ol>
+<li><strong>Conflict avoidance:</strong> If you can ensure that all writes for a particular record go through the same leader, conflicts cannot occur. Useful for geo-replicated systems, but pointless for local-first sync engines.</li>
+<li><strong>Last Write Wins (LWW):</strong> One of the simplest solutions. The system simply keeps the most recent write based on a timestamp and discards the others. The downside? It can cause data loss.</li>
+<li><strong>Manual conflict resolution:</strong> Prompting the user to fix the clash directly, similar to resolving a Git merge conflict.</li>
+<li><strong>Automatic conflict resolution:</strong> Algorithms that diff the initial and final states of conflicting writes, then try to mathematically apply both. (For example, if the initial state was 50, and node A subtracts 4 to make it 46, while Node B subtracts 2 to make it 48, the engine resolves the final state to 44).</li>
+<li><strong>Conflict-Free Replicated Data Types (CRDTs).</strong></li>
+<li><strong>Operational Transformation (OT).</strong></li>
+</ol>
+<p>Due to the deep complexity of CRDTs and OT, I won&rsquo;t dissect them here. I highly recommend reading Chapter 6 of <em>Designing Data-Intensive Applications</em>, or reviewing Chapter 8 of Dr. Martin Kleppmann&rsquo;s <em>Distributed Systems</em> course at the University of Cambridge.</p>
+<h2 id="the-3ync-engine-concept-and-architecture">The 3ync Engine Concept and Architecture<a hidden class="anchor" aria-hidden="true" href="#the-3ync-engine-concept-and-architecture">#</a></h2>
+<p>I decided to write a S3-compatible sync engine, named <strong>3ync</strong>, that syncs S3 buckets with one another. Each object in a bucket is a &ldquo;record,&rdquo; and each bucket acts as a leader database.</p>
+<p>First, let&rsquo;s look at the architecture of how this is applied to my Obsidian notes:</p>
+<p><img alt="current 3ync design" loading="lazy" src="https://substackcdn.com/image/fetch/$s_!QqFj!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F93d8ebbd-4064-4f40-8b5d-07e449a7487a_1392x738.png"></p>
+<p>Both the desktop and phone push their local changes to their own dedicated cloud buckets. The 3ync engine (currently running server-side) then kicks in to sync a &ldquo;Main&rdquo; bucket with the desktop bucket and mobile bucket. Finally, the desktop and mobile pull from the Main bucket to update their local files</p>
+<p>For conflict resolution, I opted for <strong>Last Write Wins (LWW)</strong> on an object level. To solve LWW&rsquo;s famous &ldquo;data loss&rdquo; problem, I built in an automatic backup mechanism. If 3ync overwrites a file, a backup of the deleted file is saved to `.3ync/backups/{timestamp</p>
+<p><em>Note: Currently, this sync evaluates the entire object, not the granular text content inside the Markdown files like a CRDT or OT would. If two concurrent writes happen on entirely different lines of the same file, the file with the highest timestamp simply wins, and the other is backed up and removed.</em></p>
+<h2 id="how-lww-interacts-with-s3-metadata">How LWW Interacts with S3 Metadata<a hidden class="anchor" aria-hidden="true" href="#how-lww-interacts-with-s3-metadata">#</a></h2>
+<p>During a sync, if an object exists in both the source bucket and replica bucket, 3ync first checks their <code>ETag</code> (the object&rsquo;s hash) to see if the contents are identical. If the ETags differ, we choose the object with the most recent <code>last_modified</code> timestamp.</p>
+<p>The problem gets much more complicated if a file exists in one bucket but is missing in the other. Because we don&rsquo;t immediately know if the object was just created in Bucket A, or if it was recently deleted from Bucket B.
+To track this state safely, 3ync writes a <code>last_update</code> timestamp to a <code>.3ync/metadata.json</code> file inside the bucket after every successful sync run. This acts as our anchor to determine if a missing file implies a &ldquo;create&rdquo; or a &ldquo;delete&rdquo; event.
+Here is the pseudocode of the core LWW sync logic:</p>
+<pre tabindex="0"><code>
+```FUNCTION LWW_SYNC(source, replica)
+    CASE
+
+        Source missing:
+            Replica older than bucket_metadata.lastUpdate?
+                YES → Do nothing (File was previously deleted in source)
+                NO  → Copy object from replica to source (New file in replica)
+
+        Replica missing:
+            Source newer than bucket_metadata.lastUpdate?
+                YES → Do nothing (New file in source)
+                NO  → Backup source object
+                      Delete source object
+
+        Both exist:
+            Objects identical (ETags match)?
+                YES → Do nothing
+
+            Source newer?
+                YES → Do nothing
+
+            Replica newer:
+                YES → Backup source object
+                      Replace source object with replica object
+
+END FUNCTION
+</code></pre><p>You can check out the actual Go implementation <a href="https://github.com/shayansm2/3ync/blob/main/sync_engine.go">here</a>. I’ve also covered these edge cases thoroughly in my integration tests using <a href="https://testcontainers.com/">Testcontainers</a>, which you can view <a href="https://github.com/shayansm2/3ync/blob/main/sync_engine_test.go">here</a>.</p>
+<h2 id="current-limitations-and-future-improvements">Current Limitations and Future Improvements<a hidden class="anchor" aria-hidden="true" href="#current-limitations-and-future-improvements">#</a></h2>
+<ol>
+<li><strong>Storage Overhead:</strong> Because 3ync strictly utilizes separate buckets per device, the storage footprint is roughly 3 times larger than the actual note contents.</li>
+<li><strong>Server-Side Bottleneck:</strong> Currently, the 3ync engine runs as a server-side process syncing cloud buckets together. The ideal architecture would move the 3ync runtime directly to the client side. This would eliminate the need for device-specific cloud buckets, allowing the client to sync directly with one central server bucket.</li>
+</ol>
+<p><img alt="future-design" loading="lazy" src="https://substackcdn.com/image/fetch/$s_!901T!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fe019891e-6e1a-421f-a614-97df98e9b1cb_894x634.png"></p>
+<ol start="3">
+<li><strong>No Garbage Collection:</strong> There is no automated cleanup process for the <code>.3ync/backups</code> folder. Right now, pruning old backup files is completely manual.</li>
+<li><strong>Platform Lock-In:</strong> 3ync is strictly S3-compatible and does not yet work natively with local file systems directly or native APIs for Google Drive/Dropbox.</li>
+</ol>
+<p>Thanks for reading! I’d love to hear your thoughts, and I would be incredibly grateful if you left a star on the <a href="https://github.com/shayansm2/3ync/tree/main">3ync repo</a> if you found the concept helpful.</p>
+<h2 id="references">References<a hidden class="anchor" aria-hidden="true" href="#references">#</a></h2>
+<ol>
+<li><em>Designing Data-Intensive Applications</em> by Dr. Martin Kleppmann</li>
+<li><em>Distributed Systems</em> course at the University of Cambridge by Dr. Martin Kleppmann</li>
+</ol>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="http://localhost:1313/">Shayan Shafiee Moghadam</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>
