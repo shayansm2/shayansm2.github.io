@@ -12,6 +12,8 @@ menu:
     - name: Side-Projects
       url: /projects/
       weight: 0
+    - name: Reading-List
+      url: /reading-list/
 
 params:
   profileMode:
