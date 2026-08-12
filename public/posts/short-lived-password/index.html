@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="auto">
+<html lang="en" dir="auto" data-theme="auto">
 
 <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,7 +10,7 @@
 <meta name="description" content="At my workplace, I was given a task: use short-lived kubeconfig for accessing Kubernetes. This was already implemented in other services in different ways, and I was asked to simply choose one of them and copy-paste it into the service I was working on. That was my plan — but when I read the code, lots of questions came to my mind about the decisions developers had made for implementing the feature.">
 <meta name="author" content="">
 <link rel="canonical" href="http://localhost:1313/posts/short-lived-password/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.f49d66caae9ea0fd43f21f29e71a8d3e284517ed770f2aa86fa012953ad3c9ef.css" integrity="sha256-9J1myq6eoP1D8h8p5xqNPihFF&#43;13Dyqob6ASlTrTye8=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.cd9298b33628769aa1bc1acebbbfd7aa11ce81dfe03484d479e1907760249a1d.css" integrity="sha256-zZKYszYodpqhvBrOu7/XqhHOgd/gNITUeeGQd2Akmh0=" rel="preload stylesheet" as="style">
 <link rel="icon" href="http://localhost:1313/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
@@ -39,49 +39,46 @@
                 --code-block-bg: rgb(46, 46, 51);
                 --code-bg: rgb(55, 56, 62);
                 --border: rgb(51, 51, 51);
+                color-scheme: dark;
             }
 
             .list {
                 background: var(--theme);
             }
 
-            .list:not(.dark)::-webkit-scrollbar-track {
-                background: 0 0;
-            }
-
-            .list:not(.dark)::-webkit-scrollbar-thumb {
-                border-color: var(--theme);
+            .toc {
+                background: var(--entry);
             }
         }
 
     </style>
 </noscript>
-</head>
-
-<body class="" id="top">
 <script>
     if (localStorage.getItem("pref-theme") === "dark") {
-        document.body.classList.add('dark');
+        document.querySelector("html").dataset.theme = 'dark';
     } else if (localStorage.getItem("pref-theme") === "light") {
-        document.body.classList.remove('dark')
+       document.querySelector("html").dataset.theme = 'light';
     } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        document.body.classList.add('dark');
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
     }
 
 </script>
-
-<header class="header">
-    <nav class="nav">
+</head>
+<body id="top">
+    <header class="header">
+    <nav class="header-nav">
         <div class="logo">
             <a href="http://localhost:1313/" accesskey="h" title="Shayan Shafiee Moghadam (Alt + H)">Shayan Shafiee Moghadam</a>
             <div class="logo-switches">
-                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
-                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                <button id="theme-toggle" class="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg class="moon" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                         stroke-linejoin="round">
                         <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
                     </svg>
-                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                    <svg class="sun" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                         stroke-linejoin="round">
                         <circle cx="12" cy="12" r="5"></circle>
@@ -97,7 +94,7 @@
                 </button>
             </div>
         </div>
-        <ul id="menu">
+        <ul id="menu" class="menu">
             <li>
                 <a href="http://localhost:1313/resume/" title="Resume">
                     <span>Resume</span>
@@ -129,47 +126,47 @@
     <h1 class="post-title entry-hint-parent">
       Short-lived password: a self interview
     </h1>
-    <div class="post-meta"><span title='2025-09-11 01:21:25 +0330 +0330'>September 11, 2025</span>
+    <div class="post-meta">
+
+<span title='2025-09-11 01:21:25 +0330 +0330'>September 11, 2025</span>
 
 </div>
   </header> 
 <figure class="entry-cover">
         <img loading="eager" src="https://substackcdn.com/image/fetch/$s_!Qh7q!,w_1040,h_545,c_fill,f_webp,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F936023c5-a3e3-4e25-8ca2-e8085d5c3def_1100x788.png" alt="">
         
-</figure><div class="toc">
-    <details >
-        <summary accesskey="c" title="(Alt + C)">
-            <span class="details">Table of Contents</span>
-        </summary>
+</figure><details class="toc" >
+    <summary accesskey="c" title="(Alt + C)">
+        <span class="title">Table of Contents</span>
+    </summary>
 
-        <div class="inner"><ul>
-                <li>
-                    <a href="#problem" aria-label="Problem">Problem</a></li>
-                <li>
-                    <a href="#1st-solution-the-simple-api-call" aria-label="1st solution: the simple API call">1st solution: the simple API call</a></li>
-                <li>
-                    <a href="#2nd-solution-add-local-cache" aria-label="2nd solution: add local cache">2nd solution: add local cache</a></li>
-                <li>
-                    <a href="#3rd-solution-add-shared-cache" aria-label="3rd solution: add shared cache">3rd solution: add shared cache</a></li>
-                <li>
-                    <a href="#4th-solution-shared-and-local-cache-together" aria-label="4th solution: shared and local cache together">4th solution: shared and local cache together</a></li>
-                <li>
-                    <a href="#5th-solution-rely-on-permission-denied-responses" aria-label="5th solution: rely on permission denied responses">5th solution: rely on permission denied responses</a></li>
-                <li>
-                    <a href="#6th-solution-auto-refresh" aria-label="6th solution: auto-refresh">6th solution: auto-refresh</a></li>
-                <li>
-                    <a href="#7th-solution-auto-refresher-node" aria-label="7th solution: auto-refresher node">7th solution: auto-refresher node</a></li>
-                <li>
-                    <a href="#8th-solution-auto-refresher-node-with-fallback" aria-label="8th solution: auto-refresher node with fallback">8th solution: auto-refresher node with fallback</a></li>
-                <li>
-                    <a href="#conclusion" aria-label="Conclusion">Conclusion</a>
-                </li>
-            </ul>
-        </div>
-    </details>
-</div>
+    <div class="inner"><ul>
+            <li>
+                <a href="#problem" aria-label="Problem">Problem</a></li>
+            <li>
+                <a href="#1st-solution-the-simple-api-call" aria-label="1st solution: the simple API call">1st solution: the simple API call</a></li>
+            <li>
+                <a href="#2nd-solution-add-local-cache" aria-label="2nd solution: add local cache">2nd solution: add local cache</a></li>
+            <li>
+                <a href="#3rd-solution-add-shared-cache" aria-label="3rd solution: add shared cache">3rd solution: add shared cache</a></li>
+            <li>
+                <a href="#4th-solution-shared-and-local-cache-together" aria-label="4th solution: shared and local cache together">4th solution: shared and local cache together</a></li>
+            <li>
+                <a href="#5th-solution-rely-on-permission-denied-responses" aria-label="5th solution: rely on permission denied responses">5th solution: rely on permission denied responses</a></li>
+            <li>
+                <a href="#6th-solution-auto-refresh" aria-label="6th solution: auto-refresh">6th solution: auto-refresh</a></li>
+            <li>
+                <a href="#7th-solution-auto-refresher-node" aria-label="7th solution: auto-refresher node">7th solution: auto-refresher node</a></li>
+            <li>
+                <a href="#8th-solution-auto-refresher-node-with-fallback" aria-label="8th solution: auto-refresher node with fallback">8th solution: auto-refresher node with fallback</a></li>
+            <li>
+                <a href="#conclusion" aria-label="Conclusion">Conclusion</a>
+            </li>
+        </ul>
+    </div>
+</details>
 
-  <div class="post-content"><p>At my workplace, I was given a task: use short-lived kubeconfig for accessing Kubernetes. This was already implemented in other services in different ways, and I was asked to simply choose one of them and copy-paste it into the service I was working on. That was my plan — but when I read the code, lots of questions came to my mind about the decisions developers had made for implementing the feature.</p>
+  <div class="post-content md-content"><p>At my workplace, I was given a task: use short-lived kubeconfig for accessing Kubernetes. This was already implemented in other services in different ways, and I was asked to simply choose one of them and copy-paste it into the service I was working on. That was my plan — but when I read the code, lots of questions came to my mind about the decisions developers had made for implementing the feature.</p>
 <p>After a while, I noticed that not only was I not copying their code into the codebase, but I was also analyzing their solutions, listing each one’s pros and cons, and even coming up with my own approach. It felt like a realistic system design interview: I was trying to identify problems, find single points of failures, and provide improvements — even if they introduced more complexity.</p>
 <p>This blog aims to present the problem and all the solutions that came to my mind for solving it, along with their benefits and drawbacks.</p>
 <hr>
@@ -187,36 +184,36 @@ Now let’s walk through different solutions, step by step, and see how we can i
 <p>The easiest and most straightforward solution is to call the short-lived password provider every time we need to access the resource. This works well if our services do not use the resource frequently.</p>
 <p>In a horizontally scaled system (with multiple nodes handling the same responsibility), each node would request its own password on each usage. Think of it like a deployment with multiple pods — each pod gets its own password whenever it needs one.</p>
 <table>
-  <thead>
-      <tr>
-          <th>Pros</th>
-          <th>Cons</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>+ simple implementation</td>
-          <td>- does not take advantage of the TTL; calls the provider every time<br> - each node calls the provider, creating high load <br>- blocking I/O due to waiting for the provider’s response</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>Pros</th>
+					<th>Cons</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>+ simple implementation</td>
+					<td>- does not take advantage of the TTL; calls the provider every time<br> - each node calls the provider, creating high load <br>- blocking I/O due to waiting for the provider’s response</td>
+			</tr>
+	</tbody>
 </table>
 <hr>
 <h2 id="2nd-solution-add-local-cache">2nd solution: add local cache<a hidden class="anchor" aria-hidden="true" href="#2nd-solution-add-local-cache">#</a></h2>
 <p><img alt="2nd solution: add local cache" loading="lazy" src="https://substackcdn.com/image/fetch/$s_!kO22!,w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F7d5f4806-593d-4811-95af-51816fea2394_1622x444.png"></p>
 <p>We can improve the first design by taking advantage of the TTL. Instead of calling the provider every time, we store the password in memory (or on the node’s local storage) for the ttl duration. When it expires, we fetch a new one.</p>
 <table>
-  <thead>
-      <tr>
-          <th>Pros</th>
-          <th>Cons</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>+ fewer calls due to caching<br>+ less load on the provider</td>
-          <td>- each node still calls the provider separately, so the provider may still face high load</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>Pros</th>
+					<th>Cons</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>+ fewer calls due to caching<br>+ less load on the provider</td>
+					<td>- each node still calls the provider separately, so the provider may still face high load</td>
+			</tr>
+	</tbody>
 </table>
 <hr>
 <h2 id="3rd-solution-add-shared-cache">3rd solution: add shared cache<a hidden class="anchor" aria-hidden="true" href="#3rd-solution-add-shared-cache">#</a></h2>
@@ -224,18 +221,18 @@ Now let’s walk through different solutions, step by step, and see how we can i
 <p>Instead of local cache, we can use a shared cache accessible from all nodes. This could be a shared PVC mounted into pods, or something like Redis.</p>
 <p>The idea is similar to the 2nd solution, but now only one node needs to fetch the password from the provider — the rest can use the shared cache.</p>
 <table>
-  <thead>
-      <tr>
-          <th>Pros</th>
-          <th>Cons</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>+ fewer calls to the provider<br> + provider called only once per TTL<br> + shared across nodes</td>
-          <td>- I/O overhead of calling shared cache each time (still faster than provider, but slower than local memory)<br> - high load on the shared cache</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>Pros</th>
+					<th>Cons</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>+ fewer calls to the provider<br> + provider called only once per TTL<br> + shared across nodes</td>
+					<td>- I/O overhead of calling shared cache each time (still faster than provider, but slower than local memory)<br> - high load on the shared cache</td>
+			</tr>
+	</tbody>
 </table>
 <p>A question may cross your mind: since multiple nodes are now reading and writing to shared cache, do we need to handle concurrency or apply locks? In most cases, no — if the password provider is idempotent (always returns a valid password that doesn’t expire prematurely), then all passwords are valid and no locking is required.</p>
 <hr>
@@ -245,36 +242,36 @@ Now let’s walk through different solutions, step by step, and see how we can i
 <p>This reduces load on the shared cache, but introduces a new issue: cache invalidation. Now we must also store the expiration time alongside the password, so that nodes know how long they can safely reuse it.</p>
 <p>This approach also allows fallback: if the shared cache fails, nodes can still go directly to the provider.</p>
 <table>
-  <thead>
-      <tr>
-          <th>Pros</th>
-          <th>Cons</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>+ efficient use of caches<br> + fewer calls to provider<br> + less load on shared cache<br> + fallback if shared cache fails</td>
-          <td>- complex cache eviction and invalidation logic</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>Pros</th>
+					<th>Cons</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>+ efficient use of caches<br> + fewer calls to provider<br> + less load on shared cache<br> + fallback if shared cache fails</td>
+					<td>- complex cache eviction and invalidation logic</td>
+			</tr>
+	</tbody>
 </table>
 <hr>
 <h2 id="5th-solution-rely-on-permission-denied-responses">5th solution: rely on permission denied responses<a hidden class="anchor" aria-hidden="true" href="#5th-solution-rely-on-permission-denied-responses">#</a></h2>
 <p><img alt="5th solution: rely on permission denied responses" loading="lazy" src="https://substackcdn.com/image/fetch/$s_!sTCt!,w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F1632295e-5dc4-494b-890d-36fa4ce34f27_1184x694.png"></p>
 <p>Another alternative is to skip TTL handling entirely in local cache. Instead, we keep using the cached password until the resource itself denies access (e.g., HTTP 401 Unauthorized). When that happens, the node fetches a new password (first from shared cache, and if not available, from the provider).</p>
 <table>
-  <thead>
-      <tr>
-          <th>Pros</th>
-          <th>Cons</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>+ no cache invalidation complexity<br> + fewer provider calls thanks to caching<br> + fallback if shared cache fails</td>
-          <td>- complexity of exception handling<br> - initial request fails before refresh<br> - potentially slower recovery</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>Pros</th>
+					<th>Cons</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>+ no cache invalidation complexity<br> + fewer provider calls thanks to caching<br> + fallback if shared cache fails</td>
+					<td>- complexity of exception handling<br> - initial request fails before refresh<br> - potentially slower recovery</td>
+			</tr>
+	</tbody>
 </table>
 <hr>
 <h2 id="6th-solution-auto-refresh">6th solution: auto-refresh<a hidden class="anchor" aria-hidden="true" href="#6th-solution-auto-refresh">#</a></h2>
@@ -282,36 +279,36 @@ Now let’s walk through different solutions, step by step, and see how we can i
 <p><img alt="6th solution: auto-refresh" loading="lazy" src="https://substackcdn.com/image/fetch/$s_!3-V9!,w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F825ef3fd-47d7-4581-b9f1-b8056445561a_1300x462.png"></p>
 <p>To fix this, we can introduce an auto-refresh mechanism: a separate thread (or cron job) checks for expiring passwords and refreshes them proactively, both in local and shared cache.</p>
 <table>
-  <thead>
-      <tr>
-          <th>Pros</th>
-          <th>Cons</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>+ requests always have a valid password in cache<br> + fewer provider calls due to shared cache</td>
-          <td>- added complexity of scheduling and eviction <br> - multithreading overhead<br> - if the auto-refresh fails, nodes may be left with expired passwords</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>Pros</th>
+					<th>Cons</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>+ requests always have a valid password in cache<br> + fewer provider calls due to shared cache</td>
+					<td>- added complexity of scheduling and eviction <br> - multithreading overhead<br> - if the auto-refresh fails, nodes may be left with expired passwords</td>
+			</tr>
+	</tbody>
 </table>
 <hr>
 <h2 id="7th-solution-auto-refresher-node">7th solution: auto-refresher node<a hidden class="anchor" aria-hidden="true" href="#7th-solution-auto-refresher-node">#</a></h2>
 <p><img alt="7th solution: auto-refresher node" loading="lazy" src="https://substackcdn.com/image/fetch/$s_!Iofq!,w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F44586483-06ad-4df4-b4c3-9f74493a8d28_1300x560.png">
 What if instead of guaranteeing that the local cache is always valid, we guarantee that shared cache is always valid, so each time the local cache expires it only gets from the shared cache and it doesn&rsquo;t handle all the logic for updating the shared cache from password provider? In this case we can add another node which it&rsquo;s responsibility is to periodically check shared cache and if the password is about to expire, refresh it. the local cache eviction can be either on-demand cache eviction (solution 4) or on-demand permission denied handling (solution 5).</p>
 <table>
-  <thead>
-      <tr>
-          <th>Pros</th>
-          <th>Cons</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>+ fewer calls to the provider<br> + nodes rely only on shared cache</td>
-          <td>- single point of failure: if refresher node fails, no new passwords are fetched<br> - added complexity of monitoring refresher health</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>Pros</th>
+					<th>Cons</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>+ fewer calls to the provider<br> + nodes rely only on shared cache</td>
+					<td>- single point of failure: if refresher node fails, no new passwords are fetched<br> - added complexity of monitoring refresher health</td>
+			</tr>
+	</tbody>
 </table>
 <p>However this solution has a big problem. the auto-refresher node is a single point of failure and if it fails no other node can refresh the password. so lets bring a fallback mechanism for handling auto-refresher&rsquo;s failure.</p>
 <hr>
@@ -320,18 +317,18 @@ What if instead of guaranteeing that the local cache is always valid, we guarant
 <p>To solve the single point of failure, we can give all nodes the ability to fetch from the provider if needed. The auto-refresher node still takes the main responsibility for updating shared cache, but if it fails, nodes can fall back to solutions 4 or 5.</p>
 <p><img alt="9th solution: auto-refresher node with fallback" loading="lazy" src="https://substackcdn.com/image/fetch/$s_!gWz1!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fe163b24a-f0ec-4725-8d0a-ef9fbca62dc6_1360x728.png"></p>
 <table>
-  <thead>
-      <tr>
-          <th>Pros</th>
-          <th>Cons</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>+ efficient and resilient<br> + refresher node reduces provider load<br> + fallback if refresher node fails</td>
-          <td>- added complexity of monitoring refresher health<br> - added complexity of scheduling and eviction</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>Pros</th>
+					<th>Cons</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>+ efficient and resilient<br> + refresher node reduces provider load<br> + fallback if refresher node fails</td>
+					<td>- added complexity of monitoring refresher health<br> - added complexity of scheduling and eviction</td>
+			</tr>
+	</tbody>
 </table>
 <hr>
 <h2 id="conclusion">Conclusion<a hidden class="anchor" aria-hidden="true" href="#conclusion">#</a></h2>
@@ -358,22 +355,31 @@ What if instead of guaranteeing that the local cache is always valid, we guarant
 <footer class="footer">
         <span>&copy; 2026 <a href="http://localhost:1313/">Shayan Shafiee Moghadam</a></span> · 
 
+    
+    
     <span>
         Powered by
-        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://gohugo.io/?utm_source=papermod" rel="noopener" target="_blank">Hugo</a> &
         <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
     </span>
 </footer>
-<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
-        <path d="M12 6H0l6-6z" />
+<a href="#top" id="top-link" class="top-link hidden" aria-label="go to top" title="Go to Top (Alt + G)" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevrons-up">
+        <polyline points="17 11 12 6 7 11"></polyline>
+        <polyline points="17 18 12 13 7 18"></polyline>
     </svg>
 </a>
 
 <script>
-    let menu = document.getElementById('menu')
+    let menu = document.getElementById('menu');
     if (menu) {
-        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
         menu.onscroll = function () {
             localStorage.setItem("menu-scroll-position", menu.scrollLeft);
         }
@@ -400,25 +406,25 @@ What if instead of guaranteeing that the local cache is always valid, we guarant
 
 </script>
 <script>
-    var mybutton = document.getElementById("top-link");
+    var toplink = document.getElementById("top-link");
     window.onscroll = function () {
-        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
-            mybutton.style.visibility = "visible";
-            mybutton.style.opacity = "1";
+        const scrollThreshold = window.innerHeight;
+        if (document.body.scrollTop > scrollThreshold || document.documentElement.scrollTop > scrollThreshold) {
+            toplink.classList.remove("hidden");
         } else {
-            mybutton.style.visibility = "hidden";
-            mybutton.style.opacity = "0";
+            toplink.classList.add("hidden");
         }
     };
 
 </script>
 <script>
     document.getElementById("theme-toggle").addEventListener("click", () => {
-        if (document.body.className.includes("dark")) {
-            document.body.classList.remove('dark');
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
             localStorage.setItem("pref-theme", 'light');
         } else {
-            document.body.classList.add('dark');
+            html.dataset.theme = 'dark';
             localStorage.setItem("pref-theme", 'dark');
         }
     })

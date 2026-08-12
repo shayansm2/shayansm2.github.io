@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="auto">
+<html lang="en" dir="auto" data-theme="auto">
 
 <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,7 +10,7 @@
 <meta name="description" content="Posts - Shayan Shafiee Moghadam">
 <meta name="author" content="">
 <link rel="canonical" href="http://localhost:1313/posts/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.f49d66caae9ea0fd43f21f29e71a8d3e284517ed770f2aa86fa012953ad3c9ef.css" integrity="sha256-9J1myq6eoP1D8h8p5xqNPihFF&#43;13Dyqob6ASlTrTye8=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.cd9298b33628769aa1bc1acebbbfd7aa11ce81dfe03484d479e1907760249a1d.css" integrity="sha256-zZKYszYodpqhvBrOu7/XqhHOgd/gNITUeeGQd2Akmh0=" rel="preload stylesheet" as="style">
 <link rel="icon" href="http://localhost:1313/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
@@ -18,7 +18,7 @@
 <link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" type="application/rss+xml" href="http://localhost:1313/posts/index.xml">
+<link rel="alternate" type="application/rss+xml" href="http://localhost:1313/posts/index.xml" title="rss">
 <link rel="alternate" hreflang="en" href="http://localhost:1313/posts/">
 <noscript>
     <style>
@@ -40,49 +40,46 @@
                 --code-block-bg: rgb(46, 46, 51);
                 --code-bg: rgb(55, 56, 62);
                 --border: rgb(51, 51, 51);
+                color-scheme: dark;
             }
 
             .list {
                 background: var(--theme);
             }
 
-            .list:not(.dark)::-webkit-scrollbar-track {
-                background: 0 0;
-            }
-
-            .list:not(.dark)::-webkit-scrollbar-thumb {
-                border-color: var(--theme);
+            .toc {
+                background: var(--entry);
             }
         }
 
     </style>
 </noscript>
-</head>
-
-<body class="list" id="top">
 <script>
     if (localStorage.getItem("pref-theme") === "dark") {
-        document.body.classList.add('dark');
+        document.querySelector("html").dataset.theme = 'dark';
     } else if (localStorage.getItem("pref-theme") === "light") {
-        document.body.classList.remove('dark')
+       document.querySelector("html").dataset.theme = 'light';
     } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        document.body.classList.add('dark');
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
     }
 
 </script>
-
-<header class="header">
-    <nav class="nav">
+</head>
+<body class="list" id="top">
+    <header class="header">
+    <nav class="header-nav">
         <div class="logo">
             <a href="http://localhost:1313/" accesskey="h" title="Shayan Shafiee Moghadam (Alt + H)">Shayan Shafiee Moghadam</a>
             <div class="logo-switches">
-                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
-                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                <button id="theme-toggle" class="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg class="moon" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                         stroke-linejoin="round">
                         <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
                     </svg>
-                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                    <svg class="sun" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                         stroke-linejoin="round">
                         <circle cx="12" cy="12" r="5"></circle>
@@ -98,7 +95,7 @@
                 </button>
             </div>
         </div>
-        <ul id="menu">
+        <ul id="menu" class="menu">
             <li>
                 <a href="http://localhost:1313/resume/" title="Resume">
                     <span>Resume</span>
@@ -142,7 +139,9 @@
 The local storage on my devices (desktop or mobile) was periodically syncing files with the cloud. This cloud storage could be any object storage, or out-of-the-box solutions like Google Drive, Dropbox, etc.
 ...</p>
   </div>
-  <footer class="entry-footer"><span title='2026-07-06 10:11:18 +0330 +0330'>July 6, 2026</span></footer>
+  <footer class="entry-footer">
+
+<span title='2026-07-06 10:11:18 +0330 +0330'>July 6, 2026</span></footer>
   <a class="entry-link" aria-label="post link to Building 3ync: A Local-First, S3-Compatible Sync Engine" href="http://localhost:1313/posts/3ync/"></a>
 </article>
 
@@ -156,7 +155,9 @@ The local storage on my devices (desktop or mobile) was periodically syncing fil
 One of their great benefits is that your files are stored locally, unlike Notion, which is actually why I switched from Notion to Obsidian in the first place. The only downside is that if you want to use Obsidian or Logseq on both a desktop and a mobile device, there isn’t a free built-in sync solution; you have to purchase their official sync service.
 ...</p>
   </div>
-  <footer class="entry-footer"><span title='2026-02-05 12:11:08 +0330 +0330'>February 5, 2026</span></footer>
+  <footer class="entry-footer">
+
+<span title='2026-02-05 12:11:08 +0330 +0330'>February 5, 2026</span></footer>
   <a class="entry-link" aria-label="post link to A Simple Local-First Syncing Solution for Personal Notes" href="http://localhost:1313/posts/rclone/"></a>
 </article>
 
@@ -173,7 +174,9 @@ One of their great benefits is that your files are stored locally, unlike Notion
 While there were additional materials about agentic RAGs and function calling (agents) — which were quite fun — the main direction of the course was toward building and understanding simple RAGs: how they work, how to connect them to vector databases, and how to evaluate and monitor them.
 ...</p>
   </div>
-  <footer class="entry-footer"><span title='2025-11-02 09:18:06 +0330 +0330'>November 2, 2025</span></footer>
+  <footer class="entry-footer">
+
+<span title='2025-11-02 09:18:06 +0330 +0330'>November 2, 2025</span></footer>
   <a class="entry-link" aria-label="post link to My Thoughts on LLMs and Building AI Products" href="http://localhost:1313/posts/llm-askhn/"></a>
 </article>
 
@@ -189,7 +192,9 @@ While there were additional materials about agentic RAGs and function calling (a
     <p>At my workplace, I was given a task: use short-lived kubeconfig for accessing Kubernetes. This was already implemented in other services in different ways, and I was asked to simply choose one of them and copy-paste it into the service I was working on. That was my plan — but when I read the code, lots of questions came to my mind about the decisions developers had made for implementing the feature.
 ...</p>
   </div>
-  <footer class="entry-footer"><span title='2025-09-11 01:21:25 +0330 +0330'>September 11, 2025</span></footer>
+  <footer class="entry-footer">
+
+<span title='2025-09-11 01:21:25 +0330 +0330'>September 11, 2025</span></footer>
   <a class="entry-link" aria-label="post link to Short-lived password: a self interview" href="http://localhost:1313/posts/short-lived-password/"></a>
 </article>
 
@@ -205,7 +210,9 @@ While there were additional materials about agentic RAGs and function calling (a
     <p>I recently read the 3rd chapter of the Designing Data-Intensive Applications book, and this blog aims to share my take on the internals of database indexes and how they have been designed. If you haven’t read this book—especially the 3rd chapter—I fully encourage you to check it out, as it is an amazing read. However, you can also go through this blog, where I’ve prepared some diagrams to show the full picture all at once. As the old saying goes, a picture is worth a thousand words. I hope you enjoy it.
 ...</p>
   </div>
-  <footer class="entry-footer"><span title='2025-06-06 23:16:03 +0330 +0330'>June 6, 2025</span></footer>
+  <footer class="entry-footer">
+
+<span title='2025-06-06 23:16:03 +0330 +0330'>June 6, 2025</span></footer>
   <a class="entry-link" aria-label="post link to Database Index Internals" href="http://localhost:1313/posts/db-index/"></a>
 </article>
 
@@ -219,7 +226,9 @@ While there were additional materials about agentic RAGs and function calling (a
 Traditionally, both the data source and the target had to be strictly structured. Data engineers spent countless hours writing code to map input data into a very specific schema. With LLMs the input data can be completely unstructured, and the model takes on the heavy lifting of transforming it into structured, usable data.
 ...</p>
   </div>
-  <footer class="entry-footer"><span title='2025-04-15 20:32:21 +0330 +0330'>April 15, 2025</span></footer>
+  <footer class="entry-footer">
+
+<span title='2025-04-15 20:32:21 +0330 +0330'>April 15, 2025</span></footer>
   <a class="entry-link" aria-label="post link to LLM Transformers as ETL Transformers" href="http://localhost:1313/posts/llm-etl/"></a>
 </article>
 
@@ -233,7 +242,9 @@ Traditionally, both the data source and the target had to be strictly structured
 Temporal is heavyweight. To run it, you need a Temporal cluster, a database connected to the cluster, one or more Temporal workers, the Temporal UI, and finally, the Temporal SDK to trigger workflows from your application. On the other hand, DBOS is lightweight and requires only a database to store its data. The workflow runs within the same application that includes the DBOS library, whereas in Temporal, workflows run on separate resources called workers. Essentially, DBOS is a library, while Temporal is a full-fledged software solution that you interact with via its SDKs.
 ...</p>
   </div>
-  <footer class="entry-footer"><span title='2025-02-05 09:31:37 +0330 +0330'>February 5, 2025</span></footer>
+  <footer class="entry-footer">
+
+<span title='2025-02-05 09:31:37 +0330 +0330'>February 5, 2025</span></footer>
   <a class="entry-link" aria-label="post link to Temporal VS DBOS " href="http://localhost:1313/posts/temporal-dbos/"></a>
 </article>
 
@@ -253,7 +264,9 @@ After discussing their response, we would follow up with:
 This question helped assess whether the candidate could scale a database effectively without over-engineering. An immediate mention of CQRS in the first round was often a red flag—indicating they skipped simpler solutions and jumped to complex ones. We also valued candidates who asked clarifying questions before proposing solutions. Jumping into an answer without knowing the QPS (queries per second) or required response time was another bad sign.
 ...</p>
   </div>
-  <footer class="entry-footer"><span title='2025-01-30 09:33:35 +0330 +0330'>January 30, 2025</span></footer>
+  <footer class="entry-footer">
+
+<span title='2025-01-30 09:33:35 +0330 +0330'>January 30, 2025</span></footer>
   <a class="entry-link" aria-label="post link to Database Scaling: A Self-Interview" href="http://localhost:1313/posts/db-scaling/"></a>
 </article>
 
@@ -267,7 +280,9 @@ This question helped assess whether the candidate could scale a database effecti
 But first, let’s align on the terminology. Based on the definitions in this text, a “real” software engineer is someone who builds tools and understands how they work. On the other hand, someone who reads the documentation of tools and connects them together is called a “blue-collar tech worker.” While one could argue about whether this term is accurate or not, let’s go with “blue-collar tech worker” to make it easier to discuss the differences.
 ...</p>
   </div>
-  <footer class="entry-footer"><span title='2025-01-21 09:10:06 +0330 +0330'>January 21, 2025</span></footer>
+  <footer class="entry-footer">
+
+<span title='2025-01-21 09:10:06 +0330 +0330'>January 21, 2025</span></footer>
   <a class="entry-link" aria-label="post link to Blue-Collar Tech Worker" href="http://localhost:1313/posts/blue-collar/"></a>
 </article>
 
@@ -287,7 +302,9 @@ The job market is evolving, thanks to advancements in GenAI and LLMs. Specialize
 Kubernetes’ design is elegant and showcases some of the best practices in software architecture and design patterns. When you explore its components, it’s like watching Lego pieces come together to form a self-reliable infrastructure. The way Kubernetes uses separation of concerns and well-defined abstractions is inspiring—it’s no surprise that it has become the new standard for cloud and DevOps. All that aside, these are the resources I found most useful for learning and working with Kubernetes.
 ...</p>
   </div>
-  <footer class="entry-footer"><span title='2024-12-16 09:14:38 +0330 +0330'>December 16, 2024</span></footer>
+  <footer class="entry-footer">
+
+<span title='2024-12-16 09:14:38 +0330 +0330'>December 16, 2024</span></footer>
   <a class="entry-link" aria-label="post link to My Personal Journey into Learning Kubernetes" href="http://localhost:1313/posts/k8s/"></a>
 </article>
 <footer class="page-footer">
@@ -301,22 +318,31 @@ Kubernetes’ design is elegant and showcases some of the best practices in soft
 <footer class="footer">
         <span>&copy; 2026 <a href="http://localhost:1313/">Shayan Shafiee Moghadam</a></span> · 
 
+    
+    
     <span>
         Powered by
-        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://gohugo.io/?utm_source=papermod" rel="noopener" target="_blank">Hugo</a> &
         <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
     </span>
 </footer>
-<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
-        <path d="M12 6H0l6-6z" />
+<a href="#top" id="top-link" class="top-link hidden" aria-label="go to top" title="Go to Top (Alt + G)" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevrons-up">
+        <polyline points="17 11 12 6 7 11"></polyline>
+        <polyline points="17 18 12 13 7 18"></polyline>
     </svg>
 </a>
 
 <script>
-    let menu = document.getElementById('menu')
+    let menu = document.getElementById('menu');
     if (menu) {
-        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
         menu.onscroll = function () {
             localStorage.setItem("menu-scroll-position", menu.scrollLeft);
         }
@@ -343,25 +369,25 @@ Kubernetes’ design is elegant and showcases some of the best practices in soft
 
 </script>
 <script>
-    var mybutton = document.getElementById("top-link");
+    var toplink = document.getElementById("top-link");
     window.onscroll = function () {
-        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
-            mybutton.style.visibility = "visible";
-            mybutton.style.opacity = "1";
+        const scrollThreshold = window.innerHeight;
+        if (document.body.scrollTop > scrollThreshold || document.documentElement.scrollTop > scrollThreshold) {
+            toplink.classList.remove("hidden");
         } else {
-            mybutton.style.visibility = "hidden";
-            mybutton.style.opacity = "0";
+            toplink.classList.add("hidden");
         }
     };
 
 </script>
 <script>
     document.getElementById("theme-toggle").addEventListener("click", () => {
-        if (document.body.className.includes("dark")) {
-            document.body.classList.remove('dark');
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
             localStorage.setItem("pref-theme", 'light');
         } else {
-            document.body.classList.add('dark');
+            html.dataset.theme = 'dark';
             localStorage.setItem("pref-theme", 'dark');
         }
     })

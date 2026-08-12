@@ -4,7 +4,7 @@
     <title>Posts on Shayan Shafiee Moghadam</title>
     <link>http://localhost:1313/posts/</link>
     <description>Recent content in Posts on Shayan Shafiee Moghadam</description>
-    <generator>Hugo -- 0.147.0</generator>
+    <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 06 Jul 2026 10:11:18 +0330</lastBuildDate>
     <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
@@ -71,10 +71,12 @@
       <guid>http://localhost:1313/posts/db-scaling/</guid>
       <description>&lt;p&gt;In my previous job, I conducted multiple technical interviews, and one of the key questions we asked candidates was:&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&amp;ldquo;If you have a database and a query takes longer than required to run, what would you do?&amp;rdquo;&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;&amp;ldquo;If you have a database and a query takes longer than required to run, what would you do?&amp;rdquo;&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;After discussing their response, we would follow up with:&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&amp;ldquo;Now, what if the load on your database increases? What would you do now?&amp;rdquo;&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;&amp;ldquo;Now, what if the load on your database increases? What would you do now?&amp;rdquo;&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;This question helped assess whether the candidate could scale a database effectively without over-engineering. An immediate mention of &lt;strong&gt;CQRS&lt;/strong&gt; in the first round was often a red flag—indicating they skipped simpler solutions and jumped to complex ones. We also valued candidates who asked clarifying questions before proposing solutions. Jumping into an answer without knowing the &lt;strong&gt;QPS&lt;/strong&gt; (queries per second) or required response time was another bad sign.&lt;/p&gt;</description>
     </item>
     <item>

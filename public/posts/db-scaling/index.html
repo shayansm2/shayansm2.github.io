@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="auto">
+<html lang="en" dir="auto" data-theme="auto">
 
 <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,13 +10,15 @@
 <meta name="description" content="In my previous job, I conducted multiple technical interviews, and one of the key questions we asked candidates was:
 
 &ldquo;If you have a database and a query takes longer than required to run, what would you do?&rdquo;
+
 After discussing their response, we would follow up with:
 
 &ldquo;Now, what if the load on your database increases? What would you do now?&rdquo;
+
 This question helped assess whether the candidate could scale a database effectively without over-engineering. An immediate mention of CQRS in the first round was often a red flag—indicating they skipped simpler solutions and jumped to complex ones. We also valued candidates who asked clarifying questions before proposing solutions. Jumping into an answer without knowing the QPS (queries per second) or required response time was another bad sign.">
 <meta name="author" content="">
 <link rel="canonical" href="http://localhost:1313/posts/db-scaling/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.f49d66caae9ea0fd43f21f29e71a8d3e284517ed770f2aa86fa012953ad3c9ef.css" integrity="sha256-9J1myq6eoP1D8h8p5xqNPihFF&#43;13Dyqob6ASlTrTye8=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.cd9298b33628769aa1bc1acebbbfd7aa11ce81dfe03484d479e1907760249a1d.css" integrity="sha256-zZKYszYodpqhvBrOu7/XqhHOgd/gNITUeeGQd2Akmh0=" rel="preload stylesheet" as="style">
 <link rel="icon" href="http://localhost:1313/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
@@ -45,49 +47,46 @@ This question helped assess whether the candidate could scale a database effecti
                 --code-block-bg: rgb(46, 46, 51);
                 --code-bg: rgb(55, 56, 62);
                 --border: rgb(51, 51, 51);
+                color-scheme: dark;
             }
 
             .list {
                 background: var(--theme);
             }
 
-            .list:not(.dark)::-webkit-scrollbar-track {
-                background: 0 0;
-            }
-
-            .list:not(.dark)::-webkit-scrollbar-thumb {
-                border-color: var(--theme);
+            .toc {
+                background: var(--entry);
             }
         }
 
     </style>
 </noscript>
-</head>
-
-<body class="" id="top">
 <script>
     if (localStorage.getItem("pref-theme") === "dark") {
-        document.body.classList.add('dark');
+        document.querySelector("html").dataset.theme = 'dark';
     } else if (localStorage.getItem("pref-theme") === "light") {
-        document.body.classList.remove('dark')
+       document.querySelector("html").dataset.theme = 'light';
     } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        document.body.classList.add('dark');
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
     }
 
 </script>
-
-<header class="header">
-    <nav class="nav">
+</head>
+<body id="top">
+    <header class="header">
+    <nav class="header-nav">
         <div class="logo">
             <a href="http://localhost:1313/" accesskey="h" title="Shayan Shafiee Moghadam (Alt + H)">Shayan Shafiee Moghadam</a>
             <div class="logo-switches">
-                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
-                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                <button id="theme-toggle" class="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg class="moon" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                         stroke-linejoin="round">
                         <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
                     </svg>
-                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                    <svg class="sun" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                         stroke-linejoin="round">
                         <circle cx="12" cy="12" r="5"></circle>
@@ -103,7 +102,7 @@ This question helped assess whether the candidate could scale a database effecti
                 </button>
             </div>
         </div>
-        <ul id="menu">
+        <ul id="menu" class="menu">
             <li>
                 <a href="http://localhost:1313/resume/" title="Resume">
                     <span>Resume</span>
@@ -135,57 +134,59 @@ This question helped assess whether the candidate could scale a database effecti
     <h1 class="post-title entry-hint-parent">
       Database Scaling: A Self-Interview
     </h1>
-    <div class="post-meta"><span title='2025-01-30 09:33:35 +0330 +0330'>January 30, 2025</span>
+    <div class="post-meta">
+
+<span title='2025-01-30 09:33:35 +0330 +0330'>January 30, 2025</span>
 
 </div>
   </header> 
 <figure class="entry-cover">
         <img loading="eager" src="https://substackcdn.com/image/fetch/$s_!LO51!,w_1040,h_545,c_fill,f_webp,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fb1c3fde8-9810-402e-8557-a281535112ed_1280x1162.png" alt="">
         
-</figure><div class="toc">
-    <details  open>
-        <summary accesskey="c" title="(Alt + C)">
-            <span class="details">Table of Contents</span>
-        </summary>
+</figure><details class="toc"  open>
+    <summary accesskey="c" title="(Alt + C)">
+        <span class="title">Table of Contents</span>
+    </summary>
 
-        <div class="inner"><ul><ul>
-                <li>
-                    <a href="#optimizing-queries-before-scaling" aria-label="Optimizing Queries Before Scaling">Optimizing Queries Before Scaling</a></li></ul>
+    <div class="inner"><ul><ul>
+            <li>
+                <a href="#optimizing-queries-before-scaling" aria-label="Optimizing Queries Before Scaling">Optimizing Queries Before Scaling</a></li></ul>
+                
+            <li>
+                <a href="#handling-high-load" aria-label="Handling High Load">Handling High Load</a><ul>
                     
-                <li>
-                    <a href="#handling-high-load" aria-label="Handling High Load">Handling High Load</a><ul>
-                        
-                <li>
-                    <a href="#1-vertical-scaling" aria-label="1. Vertical Scaling">1. Vertical Scaling</a></li>
-                <li>
-                    <a href="#2-read-replication-leader-follower-pattern" aria-label="2. Read Replication (Leader-Follower Pattern)">2. Read Replication (Leader-Follower Pattern)</a></li>
-                <li>
-                    <a href="#3-caching" aria-label="3. Caching">3. Caching</a></li>
-                <li>
-                    <a href="#4-materialized-views" aria-label="4. Materialized Views">4. Materialized Views</a></li></ul>
-                </li>
-                <li>
-                    <a href="#scaling-further-beyond-a-single-database" aria-label="Scaling Further: Beyond a Single Database">Scaling Further: Beyond a Single Database</a><ul>
-                        
-                <li>
-                    <a href="#1-sharding-partitioning-data-across-multiple-databases" aria-label="1. Sharding (Partitioning Data Across Multiple Databases)">1. Sharding (Partitioning Data Across Multiple Databases)</a></li>
-                <li>
-                    <a href="#2-cqrs-command-query-responsibility-segregation" aria-label="2. CQRS (Command Query Responsibility Segregation)">2. CQRS (Command Query Responsibility Segregation)</a></li></ul>
-                </li>
-                <li>
-                    <a href="#final-thoughts" aria-label="Final Thoughts">Final Thoughts</a>
-                </li>
-            </ul>
-        </div>
-    </details>
-</div>
+            <li>
+                <a href="#1-vertical-scaling" aria-label="1. Vertical Scaling">1. Vertical Scaling</a></li>
+            <li>
+                <a href="#2-read-replication-leader-follower-pattern" aria-label="2. Read Replication (Leader-Follower Pattern)">2. Read Replication (Leader-Follower Pattern)</a></li>
+            <li>
+                <a href="#3-caching" aria-label="3. Caching">3. Caching</a></li>
+            <li>
+                <a href="#4-materialized-views" aria-label="4. Materialized Views">4. Materialized Views</a></li></ul>
+            </li>
+            <li>
+                <a href="#scaling-further-beyond-a-single-database" aria-label="Scaling Further: Beyond a Single Database">Scaling Further: Beyond a Single Database</a><ul>
+                    
+            <li>
+                <a href="#1-sharding-partitioning-data-across-multiple-databases" aria-label="1. Sharding (Partitioning Data Across Multiple Databases)">1. Sharding (Partitioning Data Across Multiple Databases)</a></li>
+            <li>
+                <a href="#2-cqrs-command-query-responsibility-segregation" aria-label="2. CQRS (Command Query Responsibility Segregation)">2. CQRS (Command Query Responsibility Segregation)</a></li></ul>
+            </li>
+            <li>
+                <a href="#final-thoughts" aria-label="Final Thoughts">Final Thoughts</a>
+            </li>
+        </ul>
+    </div>
+</details>
 
-  <div class="post-content"><p>In my previous job, I conducted multiple technical interviews, and one of the key questions we asked candidates was:</p>
+  <div class="post-content md-content"><p>In my previous job, I conducted multiple technical interviews, and one of the key questions we asked candidates was:</p>
 <blockquote>
-<p>&ldquo;If you have a database and a query takes longer than required to run, what would you do?&rdquo;</p></blockquote>
+<p>&ldquo;If you have a database and a query takes longer than required to run, what would you do?&rdquo;</p>
+</blockquote>
 <p>After discussing their response, we would follow up with:</p>
 <blockquote>
-<p>&ldquo;Now, what if the load on your database increases? What would you do now?&rdquo;</p></blockquote>
+<p>&ldquo;Now, what if the load on your database increases? What would you do now?&rdquo;</p>
+</blockquote>
 <p>This question helped assess whether the candidate could scale a database effectively without over-engineering. An immediate mention of <strong>CQRS</strong> in the first round was often a red flag—indicating they skipped simpler solutions and jumped to complex ones. We also valued candidates who asked clarifying questions before proposing solutions. Jumping into an answer without knowing the <strong>QPS</strong> (queries per second) or required response time was another bad sign.</p>
 <p>Recently, I watched two insightful lectures by <a href="https://martin.kleppmann.com/">Martin Kleppmann</a>, the author of <em>Designing Data-Intensive Applications</em>:</p>
 <ul>
@@ -198,7 +199,8 @@ This question helped assess whether the candidate could scale a database effecti
 <blockquote>
 <p><strong>Interviewer:</strong> Imagine you have a query:<br>
 <code>SELECT * FROM users WHERE email = 'something@somewhere.com'</code><br>
-and it is running slower than expected. What would you do?</p></blockquote>
+and it is running slower than expected. What would you do?</p>
+</blockquote>
 <p>My first step would be to gather more context:</p>
 <ul>
 <li>What is the expected vs. actual response time?</li>
@@ -206,14 +208,17 @@ and it is running slower than expected. What would you do?</p></blockquote>
 <li>Could this be due to network latency instead of database performance?</li>
 </ul>
 <blockquote>
-<p><strong>Interviewer:</strong> It&rsquo;s not a network issue, and the slow response happens consistently.</p></blockquote>
+<p><strong>Interviewer:</strong> It&rsquo;s not a network issue, and the slow response happens consistently.</p>
+</blockquote>
 <p>The simplest optimization is <strong>adding an index</strong>. In this case, an index on the <code>email</code> column would reduce lookup time from <strong>O(n)</strong> to <strong>O(log n)</strong>.</p>
 <blockquote>
-<p><strong>Interviewer:</strong> This field already has an index.</p></blockquote>
+<p><strong>Interviewer:</strong> This field already has an index.</p>
+</blockquote>
 <p>If indexing isn’t the issue, I’d investigate whether the <strong>QPS has increased</strong>—high traffic can slow down even well-optimized queries.</p>
 <h2 id="handling-high-load"><strong>Handling High Load</strong><a hidden class="anchor" aria-hidden="true" href="#handling-high-load">#</a></h2>
 <blockquote>
-<p><strong>Interviewer:</strong> How would you determine if high QPS is the issue, and what would you do in each case?</p></blockquote>
+<p><strong>Interviewer:</strong> How would you determine if high QPS is the issue, and what would you do in each case?</p>
+</blockquote>
 <p>I’d use <strong>monitoring tools</strong> to check query performance metrics. If <strong>QPS is stable</strong>, I’d analyze the query execution plan (<code>EXPLAIN &lt;query&gt;</code>) to identify bottlenecks.</p>
 <p>If <strong>high QPS is causing slow response times</strong>, the problem shifts from <strong>query optimization to database scaling</strong>. There are multiple solutions:</p>
 <h3 id="1-vertical-scaling"><strong>1. Vertical Scaling</strong><a hidden class="anchor" aria-hidden="true" href="#1-vertical-scaling">#</a></h3>
@@ -239,7 +244,8 @@ and it is running slower than expected. What would you do?</p></blockquote>
 <li>Unlike caching, materialized views are maintained by the database, reducing consistency issues.</li>
 </ul>
 <blockquote>
-<p><strong>Interviewer:</strong> In what order would you take these actions?</p></blockquote>
+<p><strong>Interviewer:</strong> In what order would you take these actions?</p>
+</blockquote>
 <ol>
 <li><strong>Optimize the query and indexes.</strong></li>
 <li><strong>Introduce materialized views</strong> for expensive queries.</li>
@@ -251,7 +257,8 @@ and it is running slower than expected. What would you do?</p></blockquote>
 <hr>
 <h2 id="scaling-further-beyond-a-single-database"><strong>Scaling Further: Beyond a Single Database</strong><a hidden class="anchor" aria-hidden="true" href="#scaling-further-beyond-a-single-database">#</a></h2>
 <blockquote>
-<p><strong>Interviewer:</strong> We&rsquo;ve optimized queries, added replication, caching, and materialized views. But we still need more scalability. What now?</p></blockquote>
+<p><strong>Interviewer:</strong> We&rsquo;ve optimized queries, added replication, caching, and materialized views. But we still need more scalability. What now?</p>
+</blockquote>
 <p>If we hit hardware limits on a single database, we need <strong>horizontal scaling</strong>:</p>
 <h3 id="1-sharding-partitioning-data-across-multiple-databases"><strong>1. Sharding (Partitioning Data Across Multiple Databases)</strong><a hidden class="anchor" aria-hidden="true" href="#1-sharding-partitioning-data-across-multiple-databases">#</a></h3>
 <ul>
@@ -282,22 +289,31 @@ and it is running slower than expected. What would you do?</p></blockquote>
 <footer class="footer">
         <span>&copy; 2026 <a href="http://localhost:1313/">Shayan Shafiee Moghadam</a></span> · 
 
+    
+    
     <span>
         Powered by
-        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://gohugo.io/?utm_source=papermod" rel="noopener" target="_blank">Hugo</a> &
         <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
     </span>
 </footer>
-<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
-        <path d="M12 6H0l6-6z" />
+<a href="#top" id="top-link" class="top-link hidden" aria-label="go to top" title="Go to Top (Alt + G)" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevrons-up">
+        <polyline points="17 11 12 6 7 11"></polyline>
+        <polyline points="17 18 12 13 7 18"></polyline>
     </svg>
 </a>
 
 <script>
-    let menu = document.getElementById('menu')
+    let menu = document.getElementById('menu');
     if (menu) {
-        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
         menu.onscroll = function () {
             localStorage.setItem("menu-scroll-position", menu.scrollLeft);
         }
@@ -324,25 +340,25 @@ and it is running slower than expected. What would you do?</p></blockquote>
 
 </script>
 <script>
-    var mybutton = document.getElementById("top-link");
+    var toplink = document.getElementById("top-link");
     window.onscroll = function () {
-        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
-            mybutton.style.visibility = "visible";
-            mybutton.style.opacity = "1";
+        const scrollThreshold = window.innerHeight;
+        if (document.body.scrollTop > scrollThreshold || document.documentElement.scrollTop > scrollThreshold) {
+            toplink.classList.remove("hidden");
         } else {
-            mybutton.style.visibility = "hidden";
-            mybutton.style.opacity = "0";
+            toplink.classList.add("hidden");
         }
     };
 
 </script>
 <script>
     document.getElementById("theme-toggle").addEventListener("click", () => {
-        if (document.body.className.includes("dark")) {
-            document.body.classList.remove('dark');
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
             localStorage.setItem("pref-theme", 'light');
         } else {
-            document.body.classList.add('dark');
+            html.dataset.theme = 'dark';
             localStorage.setItem("pref-theme", 'dark');
         }
     })
